@@ -1,0 +1,38 @@
+<mvc:View controllerName="etimaden.havelsan-proje.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						 <Panel headerText="Siparis">
+						<Button
+				        	id="helloDialogButton"
+				        	icon="sap-icon://world"
+				        	text="{i18n>openDialogButtonText}"
+				        	press=".onOpenDialog"
+				        	class="sapUiSmallMarginEnd"/>
+								<Button
+									text="{i18n>showHelloButtonText}"
+									press=".onShowHello"
+									class="sapUiSmallMarginEnd"/>
+        				   <Input
+    							value="{/ürün/isim}"
+    							description="Hello {/ürün/isim} {/ürün/miktar} {/ürün/birim}"
+							    valueLiveUpdate="true"
+							    width="60%"/>
+								<Text
+									text="Hello {/ürün/isim}"
+									class="sapUiSmallMargin"/>
+								<Text
+									text="Hello {data>/rates/CAD}"
+									class="sapUiSmallMargin"/>
+								<Text
+									text="Müşteri: {veri>/2/müsteri}"
+									class="sapUiSmallMargin"/>
+							</Panel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
