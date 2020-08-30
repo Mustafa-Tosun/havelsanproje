@@ -1,4 +1,4 @@
-var genel_veri_url = "https://havelsanproje.herokuapp.com/veriler";
+var veriler_url = "https://havelsanproje.herokuapp.com/veriler";
 
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
@@ -10,8 +10,7 @@ sap.ui.define([
 			JSONModel,
 			Fragment) {
 	"use strict";
-//	var data;
-	var yeniData, yeniSiparis; 
+
 	return Controller.extend("etimaden.havelsan-proje.controller.View1", {
 		onInit : function () {
         	// set data model on view
@@ -22,88 +21,18 @@ sap.ui.define([
             		birim: "ton"
             	}
         	};
-        	var oModel = new JSONModel(oData);
-        	this.getView().setModel(oModel);
         	
-        	yeniData = {
-        		yen: {
-					müsteri: "",
-					siparisNo: "",
-					ürün: "",
-					açıklama: "",
-					teslimSekli: "",
-					paraBirimi: ""
-        		}
-        	};
-        	var yeniModel = new JSONModel(yeniData);
-        	this.getView().setModel(yeniModel);
-        	//yeniSiparis = yeniModel;
-        	
-        		///////////////////////////////////////////////DIGER PROJE
-        	    var oModel1 = new sap.ui.model.json.JSONModel();
-                var oResourceBundle = this.getOwnerComponent()
-                    .getModel("i18n")
-                    .getResourceBundle();
-                var url = oResourceBundle.getText("dataUrl1");
-
-                oModel1.loadData(url); //Genelveri json yuklemesi
-                this.getView().setModel(oModel, "dataModel1");
-
-                var oVieww = this.getView();
-                var oModell = new sap.ui.model.json.JSONModel(genel_veri_url);
-                oModel.attachRequestCompleted(function () {
-              //  	  data = JSON.parse(oModel1.getJSON());
-                //    items = data[items_text];
-                //    vagons = data[vagons_text];
-                //    home_stations = data[stations_text][home_text];
-                //    abroad_stations = data[stations_text][abroad_text];
-                //    clients = data[clients_text];
-                    oVieww.setModel(oModell, "fragmentModel");
-                });
-                ///////////////////////////////////////////////DIGER PROJE
-    	var aa = new sap.ui.model.json.JSONModel("https://api.exchangeratesapi.io/latest");
-        this.getView().setModel(aa, "data");
+        var oModel = new JSONModel(oData);
+        this.getView().setModel(oModel);
         
-        var bb = new sap.ui.model.json.JSONModel(genel_veri_url);
-        this.getView().setModel(bb, "veri");
-            
-        //    var deneme = new JSONModel({
-         //   	text: data
-         //   });
-         //   sap.ui.getCore.setModel(deneme);
-         //   new JSONModel({data:"{/data"}).placeAt("content");
-                
-        
-        ///////////////////////////////////////////////////////https://jsbin.com/wucazawoze/edit?html,js,output
-        
-        
-        ///////////////////////////////////////////////////////https://jsbin.com/wucazawoze/edit?html,js,output
-
-        
-        
-        /////////////////////////////////////////////////////////DOCUMENTATION
-        // Create a JSON model from an object literal
-	//	var documentationModel = new JSONModel({
-	//		greetingText: "Hi, my name is Harry Hawk"
-	//	});
-
-		// Assign the model object to the SAPUI5 core
-	//	sap.ui.getCore().setModel(documentationModel);
-    	
-			
-			// Display a text element whose text is derived
-		// from the model object
-
-	//	new Text({text: "{/greetingText}"}).placeAt("content");
+        var siparisVerileri = new sap.ui.model.json.JSONModel(veriler_url);
+        this.getView().setModel(siparisVerileri, "veri");
 		},
-    	
-    	/////////////////////////////////////////////////////////DOCUMENTATION
-		
+
 		onShowHello: function () {
 			 MessageToast.show("Hello World");
 		},
 
-        
         onSubmit: function () {
         	console.log("submitting..");
         	jQuery.ajax({
@@ -133,12 +62,10 @@ sap.ui.define([
         },
         
         onChangeSiparisNo: function (oEvent) {
-        	let input = oEvent.getParameters().value;
+        	var input = oEvent.getParameters().value;
         	var kontrol = {
         		"siparisNo": input
         	}
-        	console.log(input);
-        	console.log(kontrol);
         	jQuery.ajax({
         		type: "POST",
         		url: "https://havelsanproje.herokuapp.com/kontrolSiparisNo",
@@ -171,7 +98,7 @@ sap.ui.define([
 						"paraBirimi": oView.byId("paraBirimi").getValue()
 				}),
 				success: function() {
-					MessageToast.show("Talep Başarıyla Kaydedildi.", {
+					MessageToast.show("Siparis Başarıyla Kaydedildi.", {
                         duration: 5000,
                     });
 				},

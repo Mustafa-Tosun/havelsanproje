@@ -24,13 +24,10 @@
 								text="Hello {/ürün/isim}"
 								class="sapUiSmallMargin"/>
 							<Text
-								text="Hello {data>/rates/CAD}"
-								class="sapUiSmallMargin"/>
-							<Text
 								text="Müşteri: {veri>/siparisler/2/müsteri}"
 								class="sapUiSmallMargin"/>
 							<Input id="musteri" type="Text" submit="kaydet"  placeholder="Müşteri"  />
-							<Input id="siparisNo" type="Number" submit="kaydet" placeholder="Sipariş No" liveChange=".onChangeSiparisNo" />
+							<Input id="siparisNo" type="Number" submit="kaydet" placeholder="Sipariş No" change=".onChangeSiparisNo" />
 							<Input id="urun" type="Text" submit="kaydet" placeholder="Ürün"  />
 							<Input id="aciklama" type="Text" submit="kaydet"  placeholder="Açıklama"  />
 							<Input id="teslimSekli" type="Text" submit="kaydet" placeholder="Teslim Şekli"  />
