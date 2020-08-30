@@ -4,32 +4,56 @@
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-						 <Panel headerText="Siparis">
-						<Button
-				        	id="helloDialogButton"
-				        	icon="sap-icon://world"
-				        	text="{i18n>openDialogButtonText}"
-				        	press=".onOpenDialog"
-				        	class="sapUiSmallMarginEnd"/>
-								<Button
-									text="{i18n>showHelloButtonText}"
-									press=".onShowHello"
-									class="sapUiSmallMarginEnd"/>
-        				   <Input
-    							value="{/ürün/isim}"
-    							description="Hello {/ürün/isim} {/ürün/miktar} {/ürün/birim}"
-							    valueLiveUpdate="true"
-							    width="60%"/>
-								<Text
-									text="Hello {/ürün/isim}"
-									class="sapUiSmallMargin"/>
-								<Text
-									text="Hello {data>/rates/CAD}"
-									class="sapUiSmallMargin"/>
-								<Text
-									text="Müşteri: {veri>/2/müsteri}"
-									class="sapUiSmallMargin"/>
-							</Panel>
+						<Panel headerText="Siparis">
+							<Button
+					        	id="helloDialogButton"
+					        	icon="sap-icon://world"
+					        	text="{i18n>openDialogButtonText}"
+					        	press=".onOpenDialog"
+					        	class="sapUiSmallMarginEnd"/>
+							<Button
+								text="HelloButton"
+								press=".onShowHello"
+								class="sapUiSmallMarginEnd"/>
+	        				<Input
+	    						value="{/ürün/isim}"
+	    						description="Hello {/ürün/isim} {/ürün/miktar} {/ürün/birim}"
+								valueLiveUpdate="true"
+								width="60%"/>
+							<Text
+								text="Hello {/ürün/isim}"
+								class="sapUiSmallMargin"/>
+							<Text
+								text="Hello {data>/rates/CAD}"
+								class="sapUiSmallMargin"/>
+							<Text
+								text="Müşteri: {veri>/siparisler/2/müsteri}"
+								class="sapUiSmallMargin"/>
+							<Input id="musteri" type="Text" submit="kaydet"  placeholder="Müşteri"  />
+							<Input id="siparisNo" type="Number" submit="kaydet" placeholder="Sipariş No" liveChange=".onChangeSiparisNo" />
+							<Input id="urun" type="Text" submit="kaydet" placeholder="Ürün"  />
+							<Input id="aciklama" type="Text" submit="kaydet"  placeholder="Açıklama"  />
+							<Input id="teslimSekli" type="Text" submit="kaydet" placeholder="Teslim Şekli"  />
+							<Input id="paraBirimi" type="Text" submit="kaydet" placeholder="Para Birimi" />
+							<Button id="idButtonLogin" text="Yeni Siparişi Kaydet" type="Emphasized" visible="true" press="kaydetYeniSiparis" icon="sap-icon://accept" />
+							<Button 
+								text="Hardcoded siparis"
+								press=".onSubmit"/>
+							<List
+								id="ShortProductList"
+								headerText="Siparişler"
+								items="{
+									path: 'veri>/siparisler'
+								}">
+								<items>
+									<StandardListItem
+										type="Active"
+										title="Sipariş No:{veri>siparisNo}"
+										info="Müşteri:{veri>müsteri}"
+										press="onPress" />
+								</items>
+							</List>
+						</Panel>
 					</content>
 				</Page>
 			</pages>

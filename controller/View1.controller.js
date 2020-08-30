@@ -11,6 +11,7 @@ sap.ui.define([
 			Fragment) {
 	"use strict";
 //	var data;
+	var yeniData, yeniSiparis; 
 	return Controller.extend("etimaden.havelsan-proje.controller.View1", {
 		onInit : function () {
         	// set data model on view
@@ -23,6 +24,20 @@ sap.ui.define([
         	};
         	var oModel = new JSONModel(oData);
         	this.getView().setModel(oModel);
+        	
+        	yeniData = {
+        		yen: {
+					müsteri: "",
+					siparisNo: "",
+					ürün: "",
+					açıklama: "",
+					teslimSekli: "",
+					paraBirimi: ""
+        		}
+        	};
+        	var yeniModel = new JSONModel(yeniData);
+        	this.getView().setModel(yeniModel);
+        	//yeniSiparis = yeniModel;
         	
         		///////////////////////////////////////////////DIGER PROJE
         	    var oModel1 = new sap.ui.model.json.JSONModel();
@@ -86,6 +101,87 @@ sap.ui.define([
 		
 		onShowHello: function () {
 			 MessageToast.show("Hello World");
+		},
+
+        
+        onSubmit: function () {
+        	console.log("submitting..");
+        	jQuery.ajax({
+        		type: "POST",
+        		url: "https://havelsanproje.herokuapp.com/siparis",
+        		contentType: "application/json",
+        		data:JSON.stringify({
+						"müsteri": "Controller",
+						"siparisNo": "0010",
+						"ürün": "Yeni Ürün3",
+						"açıklama": "açıklama",
+						"teslimSekli": "teslim",
+						"paraBirimi": "Yok"
+				}),
+				success: function(data, textStatus){
+					MessageToast.show("Talep Başarıyla Kaydedildi.", {
+                        duration: 5000,
+                    });
+				},
+				error: function(error){
+					console.log("HATA: ", error);
+						MessageToast.show("başarısız", {
+                        duration: 5000,
+                    });
+				}
+        	});
+        },
+        
+        onChangeSiparisNo: function (oEvent) {
+        	let input = oEvent.getParameters().value;
+        	var kontrol = {
+        		"siparisNo": input
+        	}
+        	console.log(input);
+        	console.log(kontrol);
+        	jQuery.ajax({
+        		type: "POST",
+        		url: "https://havelsanproje.herokuapp.com/kontrolSiparisNo",
+        		contentType: "application/json",
+				data: JSON.stringify(kontrol),
+				success: function(response)  {
+					console.log("siparis no kontrol get success");
+				},
+				error: function(error,response) {
+					console.log("HATA: ", error);
+					if(error.status == 402){
+						MessageToast.show("Sipariş numarası zaten kayıtlı");
+					}
+            	}
+        	})
+        },
+        
+		kaydetYeniSiparis: function (oEvent) {
+			const oView = this.getView();
+        	jQuery.ajax({
+        		type: "POST",
+        		url: "https://havelsanproje.herokuapp.com/siparis",
+        		contentType: "application/json",
+        		data:JSON.stringify({
+						"müsteri": oView.byId("musteri").getValue(),
+						"siparisNo": oView.byId("siparisNo").getValue(),
+						"ürün": oView.byId("urun").getValue(),
+						"açıklama": oView.byId("aciklama").getValue(),
+						"teslimSekli": oView.byId("teslimSekli").getValue(),
+						"paraBirimi": oView.byId("paraBirimi").getValue()
+				}),
+				success: function() {
+					MessageToast.show("Talep Başarıyla Kaydedildi.", {
+                        duration: 5000,
+                    });
+				},
+				error: function(error) {
+					console.log("HATA: ", error);
+						MessageToast.show("başarısız", {
+                        duration: 5000,
+                    });
+				}
+        	});
 		},
 		
 		onOpenDialog : function () {
