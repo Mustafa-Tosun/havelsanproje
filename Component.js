@@ -1,9 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"com/sap/build/standard/esasPrototip/model/models",
-	"./model/errorHandling"
-], function(UIComponent, Device, models, errorHandling) {
+	"com/sap/build/standard/esasPrototip/model/models"
+], function(UIComponent, Device, models) {
 	"use strict";
 
 	var navigationWithContext = {
@@ -42,7 +41,7 @@ sap.ui.define([
 			UIComponent.prototype.init.apply(this, arguments);
 
 			// delegate error handling
-			errorHandling.register(this);
+			//errorHandling.register(this);
 
 			// create the views based on the url/hash
 			this.getRouter().initialize();
