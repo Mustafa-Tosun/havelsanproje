@@ -1,0 +1,442 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.esasPrototip.controller.CokKalemliSiparisDuzenleme" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:f="sap.f" xmlns:layout1="sap.ui.commons.layout">
+    <Page showHeader="true" title="Çok Kalemli Sipariş Düzenleme Ekranı" showFooter="false" showNavButton="true" enableScrolling="false" navButtonPress="_onPageNavButtonPress">
+        <content>
+            <layout1:AbsoluteLayout horizontalScrolling="Hidden" verticalScrolling="Auto">
+                <layout1:positions>
+                    <layout1:PositionContainer left="60px" top="843px">
+                        <layout1:control>
+                            <OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+                                <content>
+                                    <Title text="Liste" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+                                    <ToolbarSpacer width=""/>
+                                    <OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                                    <OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                                    <OverflowToolbarButton text="Group" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                                    <OverflowToolbarButton text="Settings" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                                </content>
+                            </OverflowToolbar>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="55px" top="15px">
+                        <layout1:control>
+                            <Title text="" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="241px">
+                        <layout1:control>
+                            <Label text="Ürün Açıklama" design="Standard" width="90.00000000px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="78px">
+                        <layout1:control>
+                            <Label text="Sipariş No" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiLargeMarginTop sapUiLargeMarginBottom sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="153px">
+                        <layout1:control>
+                            <Label text="Ürün" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiLargeMarginTop sapUiLargeMarginBottom sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="23px">
+                        <layout1:control>
+                            <Label text="Ad Soyad" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="LTR" visible="true" class="sapUiLargeMarginTop sapUiLargeMarginBottom sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="10px" top="371px">
+                        <layout1:control>
+                            <Label text="Ad Soyad" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="false" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="119px" top="90px">
+                        <layout1:control>
+                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598540461216-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="119px" top="216px">
+                        <layout1:control>
+                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598549662805-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="119px" top="27px">
+                        <layout1:control>
+                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598540141055-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin" liveChange="_onTextAreaLiveChange"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="9px" top="301px">
+                        <layout1:control>
+                            <Label text="Ödeme Türü" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="150px" top="174px">
+                        <layout1:control>
+                            <ComboBox placeholder="" editable="true" enabled="true" visible="true" width="399px" valueState="None" maxWidth="100%" items="{path:'/Sayfa1Set', templateShareable:true}">
+                                <items>
+                                    <core:Item text="{ADI}" enabled="true" key="{ADI}"/>
+                                </items>
+                            </ComboBox>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="610px" top="42.01171875px">
+                        <layout1:control>
+                            <Label text="Başlangıç" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="799px" top="138px">
+                        <layout1:control>
+                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/paketlemeSet', templateShareable:true}">
+                                <items>
+                                    <core:Item text="{Torba_Sekil_Tanim}" enabled="true" key="{Torba_Sekil_Tanim}"/>
+                                </items>
+                            </ComboBox>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="834px" top="0px">
+                        <layout1:control>
+                            <Label text="Sevkiyat Tarih Aralığı" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="148px" top="326px">
+                        <layout1:control>
+                            <ComboBox editable="true" enabled="true" visible="true" width="404px" valueState="None" maxWidth="100%" items="{path:'/odemeturSet', templateShareable:true}">
+                                <items>
+                                    <core:Item text="{odeme_turu}" enabled="true" key="{odeme_turu}"/>
+                                </items>
+                            </ComboBox>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="368px">
+                        <layout1:control>
+                            <Label text="Para Birimi" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="153px" top="393px">
+                        <layout1:control>
+                            <ComboBox editable="true" enabled="true" visible="true" width="173px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="TL" enabled="true" key="TL"/>
+                                    <core:Item text="Dolar" enabled="true" key="Dolar"/>
+                                    <core:Item text="Euro" enabled="true" key="Euro"/>
+                                    <core:Item text="Pound" enabled="true" key="Pound"/>
+                                </items>
+                            </ComboBox>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="608px" top="310px">
+                        <layout1:control>
+                            <Label text="Sektör" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="799px" top="307px">
+                        <layout1:control>
+                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/SektorSet', templateShareable:true}">
+                                <items>
+                                    <core:Item text="{Sektor}" enabled="true" key="{Sektor}"/>
+                                </items>
+                            </ComboBox>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="693.01171875px">
+                        <layout1:control>
+                            <Label text="Belgeler:" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="240px" top="675px">
+                        <layout1:control>
+                            <ComboBox editable="true" enabled="true" visible="true" width="307.48046875px" valueState="None" maxWidth="100%" items="{path:'/dokumanturuSet', templateShareable:true}">
+                                <items>
+                                    <core:Item text="{DOKUMAN_TR}" enabled="true" key="{DOKUMAN_TR}"/>
+                                </items>
+                            </ComboBox>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="511px">
+                        <layout1:control>
+                            <Label text="Açıklamalar" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="447px" top="735.01171875px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="11" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="122px" top="686px">
+                        <layout1:control>
+                            <Label text="Doküman Türü" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiSmallMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="122px" top="724px">
+                        <layout1:control>
+                            <Label text="Kopya Adedi" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiSmallMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="361px" top="724px">
+                        <layout1:control>
+                            <Label text="Açıklama" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiSmallMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="240px" top="733px">
+                        <layout1:control>
+                            <StepInput value="0" min="0" max="100" step="1" largerStep="2" displayValuePrecision="0" width="126px" valueState="None" editable="true" enabled="true" visible="true"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="608px" top="442px">
+                        <layout1:control>
+                            <Label text="Fatura Firması" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="136px" top="527px">
+                        <layout1:control>
+                            <TextArea rows="5" placeholder="Açıklamanızı Giriniz" cols="51" maxLength="200" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="812px" top="466px">
+                        <layout1:control>
+                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598624279109-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="608px" top="227px">
+                        <layout1:control>
+                            <Label text="Teslim Şekli" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="608px" top="93px">
+                        <layout1:control>
+                            <Label text="Paketleme" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="433px" top="393px">
+                        <layout1:control>
+                            <ComboBox editable="true" enabled="true" visible="true" width="118px" valueState="None" maxWidth="100%" items="{path:'/TasimasekliSet', templateShareable:true}">
+                                <items>
+                                    <core:Item text="{tasima_sekli}" enabled="true" key="{tasima_sekli}"/>
+                                </items>
+                            </ComboBox>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="608px" top="176px">
+                        <layout1:control>
+                            <Label text="Miktar" design="Standard" width="47.50000000px" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="304px" top="368px">
+                        <layout1:control>
+                            <Label text="Taşıma Şekli" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="1122px" top="193px">
+                        <layout1:control>
+                            <ComboBox editable="true" enabled="true" visible="true" width="131px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Kilogram" enabled="true" key="Kilogram"/>
+                                    <core:Item text="Ton" enabled="true" key="Ton"/>
+                                </items>
+                            </ComboBox>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="608px" top="368px">
+                        <layout1:control>
+                            <Label text="Ödeme Bilgisi" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="800px" top="192px">
+                        <layout1:control>
+                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598610200029-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" rows="1" cols="24" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="797px" top="383px">
+                        <layout1:control>
+                            <RadioButtonGroup id="sap_m_Page_0-content-sap_m_RadioButtonGroup-1598622896251-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" columns="8" selectedIndex="0" valueState="None" width="auto" editable="true" enabled="true" textDirection="Inherit" select="_onRadioButtonGroupSelect">
+                                <buttons>
+                                    <RadioButton text="Var" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+                                    <RadioButton text="Yok" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+                                </buttons>
+                            </RadioButtonGroup>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="799px" top="252px">
+                        <layout1:control>
+                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/teslimSekliSet', templateShareable:true}">
+                                <items>
+                                    <core:Item text="{teslim_sekli}" enabled="true" key="{teslim_sekli}"/>
+                                </items>
+                            </ComboBox>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="518px" top="1185.01171875px">
+                        <layout1:control>
+                            <Button text="Değişiklikleri Kaydet" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiMediumMargin" press="_onButtonPress"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="2px" top="442px">
+                        <layout1:control>
+                            <Label text="Alıcı Firma" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="144px" top="466px">
+                        <layout1:control>
+                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598624290229-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" rows="1" cols="51" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="1002px" top="168px">
+                        <layout1:control>
+                            <Label text="Ölçü Birimi" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="366px" top="824px">
+                        <layout1:control>
+                            <Button text="Listeye Ekle" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="37px" top="5.01171875px">
+                        <layout1:control>
+                            <MessageStrip text="Lütfen bu formu yalnızca çok kalemli siparişler için kullanınız." type="Error" customIcon="" showIcon="false" showCloseButton="false" visible="true">
+                                <link/>
+                            </MessageStrip>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="29px" top="881px">
+                        <layout1:control>
+                            <Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+                                <infoToolbar>
+                                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                        <content>
+                                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </content>
+                                    </Toolbar>
+                                </infoToolbar>
+                                <headerToolbar/>
+                                <columns>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Sipariş No" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Ürün" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Miktar" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Birim Fiyat" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Toplam Tutar" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Paketleme" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                        </cells>
+                                    </ColumnListItem>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                        </cells>
+                                    </ColumnListItem>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <layout:content/>
+                                            </layout:HorizontalLayout>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="915px" top="44.01171875px">
+                        <layout1:control>
+                            <Label text="Bitiş" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="983px" top="52.01171875px">
+                        <layout1:control>
+                            <DatePicker width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="725px" top="53.01171875px">
+                        <layout1:control>
+                            <DatePicker width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                </layout1:positions>
+            </layout1:AbsoluteLayout>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent>
+            <f:Avatar src="/webapp/resources/eti-maden-isletmeleri.jpg" initials="" displayShape="Circle" displaySize="M" imageFitType="Cover"/>
+        </headerContent>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

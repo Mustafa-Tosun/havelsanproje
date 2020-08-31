@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.esasPrototip.controller.QuickView2" xmlns="sap.m">
+    <QuickView placement="Auto" width="1024px">
+        <pages>
+            <QuickViewPage header="Özet Ekranı" title="Title" titleUrl="" description="-">
+                <groups>
+                    <QuickViewGroup visible="true" heading="Heading">
+                        <elements>
+                            <QuickViewGroupElement label="Label" value="Value" type="text" emailSubject="" pageLinkId="" url="" target="_blank" visible="true"/>
+                        </elements>
+                    </QuickViewGroup>
+                </groups>
+            </QuickViewPage>
+        </pages>
+    </QuickView>
+</core:FragmentDefinition>

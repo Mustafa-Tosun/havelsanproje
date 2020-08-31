@@ -1,0 +1,86 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="90f8d8e609b3aba4140683f0" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="90f8d8e609b3aba4140683f0_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="Sayfa1Set" EntityType="90f8d8e609b3aba4140683f0.Sayfa1" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="teslimSekliSet" EntityType="90f8d8e609b3aba4140683f0.teslimSekli" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="paketlemeSet" EntityType="90f8d8e609b3aba4140683f0.paketleme" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="odemeturSet" EntityType="90f8d8e609b3aba4140683f0.odemetur" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="SektorSet" EntityType="90f8d8e609b3aba4140683f0.Sektor" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="TasimasekliSet" EntityType="90f8d8e609b3aba4140683f0.Tasimasekli" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="dokumanturuSet" EntityType="90f8d8e609b3aba4140683f0.dokumanturu" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="ObjectSet" EntityType="90f8d8e609b3aba4140683f0.Object" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="DurumSet" EntityType="90f8d8e609b3aba4140683f0.Durum" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+            </EntityContainer>
+            <EntityType Name="Sayfa1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="ADI" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ADI"/>
+                <Property Name="DefaultName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+            </EntityType>
+            <EntityType Name="teslimSekli">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="teslim_sekli" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="teslim_sekli"/>
+            </EntityType>
+            <EntityType Name="paketleme">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Miktar" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Miktar"/>
+                <Property Name="Birim" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Birim"/>
+                <Property Name="Torba_Sekil_Tanim" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Torba_Sekil_Tanim"/>
+            </EntityType>
+            <EntityType Name="odemetur">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="odeme_turu" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="odeme_turu"/>
+            </EntityType>
+            <EntityType Name="Sektor">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Sektor" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Sektor"/>
+            </EntityType>
+            <EntityType Name="Tasimasekli">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="tasima_sekli" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="tasima_sekli"/>
+            </EntityType>
+            <EntityType Name="dokumanturu">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="DOKUMAN_TR" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DOKUMAN_TR"/>
+                <Property Name="DOKUMAN_EN" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DOKUMAN_EN"/>
+                <Property Name="AKTIF" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="AKTIF"/>
+                <Property Name="SIRALAMA" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SIRALAMA"/>
+                <Property Name="VKORG" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="VKORG"/>
+            </EntityType>
+            <EntityType Name="Object">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+            </EntityType>
+            <EntityType Name="Durum">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Durum" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Durum"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

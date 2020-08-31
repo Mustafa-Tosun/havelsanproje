@@ -1,21 +1,34 @@
 {
-	"_version": "1.12.0",
+	"_version": "1.8.0",
 	"sap.app": {
-		"id": "etimaden.havelsan-proje",
+		"_version": "1.3.0",
+		"id": "com.sap.build.standard.esasPrototip",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
-			"version": "1.0.0"
+			"version": "1.2.2"
+		},
+		"dataSources": {
+			"local": {
+				"uri": "/here/goes/your/serviceUrl/local/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
 		},
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
+		"ach": "ach",
+		"resources": "resources.json",
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
-			"version": "1.40.12"
+			"version": "1.32.0"
 		}
 	},
-
 	"sap.ui": {
+		"_version": "1.3.0",
 		"technology": "UI5",
 		"icons": {
 			"icon": "",
@@ -31,21 +44,18 @@
 			"phone": true
 		}
 	},
-
 	"sap.ui5": {
-		"flexEnabled": false,
+		"_version": "1.3.0",
 		"rootView": {
-			"viewName": "etimaden.havelsan-proje.view.View1",
-			"type": "XML",
-			"async": true,
-			"id": "View1"
+			"viewName": "com.sap.build.standard.esasPrototip.view.CokKalemliSiparisDuzenleme",
+			"type": "XML"
 		},
 		"dependencies": {
-			"minUI5Version": "1.65.6",
+			"minUI5Version": "1.50.0",
 			"libs": {
-				"sap.ui.layout": {},
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.ui.layout": {}
 			}
 		},
 		"contentDensities": {
@@ -55,44 +65,135 @@
 		"models": {
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "etimaden.havelsan-proje.i18n.i18n"
-				}
+				"uri": "i18n/i18n.properties"
 			},
-			"siparisModel": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/siparis.json"
+			"": {
+				"dataSource": "local",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"loadMetadataAsync": false,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true,
+					"refreshAfterChange": false,
+					"disableHeadRequestForToken": true
+				}
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": []
 		},
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"async": true,
-				"viewPath": "etimaden.havelsan-proje.view",
+				"viewPath": "com.sap.build.standard.esasPrototip.view",
+				"controlId": "App",
+				"clearTarget": false,
 				"controlAggregation": "pages",
-				"controlId": "app",
-				"clearControlAggregation": false
-			},
-			"routes": [{
-				"name": "RouteView1",
-				"pattern": "RouteView1",
-				"target": ["TargetView1"]
-			}],
-			"targets": {
-				"TargetView1": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewId": "View1",
-					"viewName": "View1"
+				"bypassed": {
+					"target": [
+						"YurticiWebSiparisListesi"
+					]
 				}
-			}
+			},
+			"targets": {
+				"YurticiWebSiparisListesi": {
+					"controlAggregation": "pages",
+					"viewName": "YurticiWebSiparisListesi",
+					"viewId": "YurticiWebSiparisListesi",
+					"viewLevel": 2,
+					"transition": "slide"
+				},
+				"KontratsizCokKalemliSiparis": {
+					"controlAggregation": "pages",
+					"viewName": "KontratsizCokKalemliSiparis",
+					"viewId": "KontratsizCokKalemliSiparis",
+					"viewLevel": 6,
+					"transition": "slide"
+				},
+				"KontratsizTekKalemliSiparis": {
+					"controlAggregation": "pages",
+					"viewName": "KontratsizTekKalemliSiparis",
+					"viewId": "KontratsizTekKalemliSiparis",
+					"viewLevel": 4,
+					"transition": "slide"
+				},
+				"SiparisOzetEkrani": {
+					"controlAggregation": "pages",
+					"viewName": "SiparisOzetEkrani",
+					"viewId": "SiparisOzetEkrani",
+					"viewLevel": 3,
+					"transition": "slide"
+				},
+				"TekKalemliSiparisDuzenlemeEkrani": {
+					"controlAggregation": "pages",
+					"viewName": "TekKalemliSiparisDuzenlemeEkrani",
+					"viewId": "TekKalemliSiparisDuzenlemeEkrani",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"CokKalemliSiparisDuzenleme": {
+					"controlAggregation": "pages",
+					"viewName": "CokKalemliSiparisDuzenleme",
+					"viewId": "CokKalemliSiparisDuzenleme",
+					"viewLevel": 5,
+					"transition": "slide"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "YurticiWebSiparisListesi/:context:",
+					"name": "YurticiWebSiparisListesi",
+					"target": [
+						"YurticiWebSiparisListesi"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"YurticiWebSiparisListesi"
+					]
+				},
+				{
+					"pattern": "KontratsizCokKalemliSiparis/:context:",
+					"name": "KontratsizCokKalemliSiparis",
+					"target": [
+						"KontratsizCokKalemliSiparis"
+					]
+				},
+				{
+					"pattern": "KontratsizTekKalemliSiparis/:context:",
+					"name": "KontratsizTekKalemliSiparis",
+					"target": [
+						"KontratsizTekKalemliSiparis"
+					]
+				},
+				{
+					"pattern": "SiparisOzetEkrani/:context:",
+					"name": "SiparisOzetEkrani",
+					"target": [
+						"SiparisOzetEkrani"
+					]
+				},
+				{
+					"pattern": "TekKalemliSiparisDuzenlemeEkrani/:context:",
+					"name": "TekKalemliSiparisDuzenlemeEkrani",
+					"target": [
+						"TekKalemliSiparisDuzenlemeEkrani"
+					]
+				},
+				{
+					"pattern": "CokKalemliSiparisDuzenleme/:context:",
+					"name": "CokKalemliSiparisDuzenleme",
+					"target": [
+						"CokKalemliSiparisDuzenleme"
+					]
+				}
+			]
 		}
 	}
 }

@@ -1,0 +1,144 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.esasPrototip.controller.SiparisOzetEkrani" xmlns="sap.m" xmlns:f="sap.f" xmlns:layout1="sap.ui.commons.layout">
+    <Page showHeader="true" title="Özet Ekranı" showFooter="false" showNavButton="true" enableScrolling="false" navButtonPress="_onPageNavButtonPress">
+        <content>
+            <layout1:AbsoluteLayout horizontalScrolling="Hidden" verticalScrolling="Auto">
+                <layout1:positions>
+                    <layout1:PositionContainer left="372px" top="861px">
+                        <layout1:control>
+                            <Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="55px" top="15px">
+                        <layout1:control>
+                            <Title text="" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="544px" top="529.01171875px">
+                        <layout1:control>
+                            <Image src="/webapp/resources/etimadenResim.png" height="126.00000000px" width="426.60473562px" visible="true" densityAware="false"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="23px" top="232.01171875px">
+                        <layout1:control>
+                            <Label text="Ürün Açıklama" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="16px" top="687.01171875px">
+                        <layout1:control>
+                            <Label text="Ödeme Vadesi" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiLargeMarginTop sapUiLargeMarginBottom sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="25px" top="181.01171875px">
+                        <layout1:control>
+                            <Label text="Ürün" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="23px" top="118.01171875px">
+                        <layout1:control>
+                            <Label text="Ad Soyad" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="LTR" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="24px" top="287px">
+                        <layout1:control>
+                            <Label text="Teslim Şekli" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="29px" top="420px">
+                        <layout1:control>
+                            <Label text="Miktar" design="Standard" width="51px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="10px" top="371px">
+                        <layout1:control>
+                            <Label text="Ad Soyad" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="false" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="28px" top="347px">
+                        <layout1:control>
+                            <Label text="Paketleme" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="538px" top="166px">
+                        <layout1:control>
+                            <Label text="Alıcı Firma" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="25px" top="46.01171875px">
+                        <layout1:control>
+                            <Label text="Firma" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="532px" top="41px">
+                        <layout1:control>
+                            <Label text="Ödeme Bilgisi" design="Standard" width="123.3125px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="531px" top="102px">
+                        <layout1:control>
+                            <Label text="Fatura Firması" design="Standard" width="106.3125px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="536px" top="287px">
+                        <layout1:control>
+                            <Label text="Belgeler" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="536px" top="347px">
+                        <layout1:control>
+                            <Label text="Açıklamalar" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="540px" top="236px">
+                        <layout1:control>
+                            <Label text="Sektör" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="31px" top="494.01171875px">
+                        <layout1:control>
+                            <Label text="Sevkiyat Tarih Aralığı" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="57px" top="550.01171875px">
+                        <layout1:control>
+                            <Label text="Başlangıç" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="59px" top="575.01171875px">
+                        <layout1:control>
+                            <Label text="Bitiş" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="31px" top="647.01171875px">
+                        <layout1:control>
+                            <Label text="Ödeme Türü" design="Standard" width="92px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="529px" top="893.01171875px">
+                        <layout1:control>
+                            <Button text="Kaydet" type="Default" icon="sap-icon://save" iconFirst="true" width="129.1015625px" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="37px" top="760.01171875px">
+                        <layout1:control>
+                            <Label text="Miktar" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                </layout1:positions>
+            </layout1:AbsoluteLayout>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent>
+            <f:Avatar src="/webapp/resources/eti-maden-isletmeleri.jpg" initials="" displayShape="Circle" displaySize="M" imageFitType="Cover"/>
+        </headerContent>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>
