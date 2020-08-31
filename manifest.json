@@ -55,21 +55,10 @@
 		"models": {
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
-				"uri": "i18n/i18n.properties"
+				"uri": "com.sap.build.standard.esasPrototip.i18n/i18n.properties"
 			},
 			"": {
-				"dataSource": "local",
-				"type": "sap.ui.model.odata.v2.ODataModel",
-				"settings": {
-					"loadMetadataAsync": false,
-					"json": true,
-					"bJSON": true,
-					"defaultBindingMode": "TwoWay",
-					"defaultCountMode": "Inline",
-					"useBatch": true,
-					"refreshAfterChange": false,
-					"disableHeadRequestForToken": true
-				}
+				"dataSource": "mainService"
 			}
 		},
 		"resources": {
