@@ -8,16 +8,6 @@
 		"applicationVersion": {
 			"version": "1.2.2"
 		},
-		"dataSources": {
-			"local": {
-				"uri": "/here/goes/your/serviceUrl/local/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
-				}
-			}
-		},
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"ach": "ach",
