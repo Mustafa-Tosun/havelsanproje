@@ -8,6 +8,16 @@
 		"applicationVersion": {
 			"version": "1.2.2"
 		},
+		"dataSources": {
+			"local": {
+				"uri": "localService/metadata.xml",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"ach": "ach",
@@ -55,10 +65,21 @@
 		"models": {
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
-				"uri": "com.sap.build.standard.esasPrototip.i18n/i18n.properties"
+				"uri": "i18n/i18n.properties"
 			},
 			"": {
-				"dataSource": "mainService"
+				"dataSource": "local",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"loadMetadataAsync": false,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true,
+					"refreshAfterChange": false,
+					"disableHeadRequestForToken": true
+				}
 			}
 		},
 		"resources": {
