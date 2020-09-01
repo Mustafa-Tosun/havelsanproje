@@ -170,31 +170,56 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 		},
 		onIleri: function(oEvent) {
-			var adSoyad = this.getView().byId("adSoyad").getValue();
-			var urun = this.getView().byId("urun").getValue();
-			var urunAciklama = this.getView().byId("urunAciklama").getValue();
-			var teslimSekli = this.getView().byId("teslimSekli").getValue();
-			var paketleme = this.getView().byId("paketleme").getValue();
-			var miktar = this.getView().byId("miktar").getValue();
-			var olcuBirimi = this.getView().byId("olcuBirimi").getValue();
-			var paraBirimi = this.getView().byId("paraBirimi").getValue();
-			var sevkiyatBaslangic = this.getView().byId("sevkiyatBaslangic").getDateValue();
-			var sevkiyatBitis = this.getView().byId("sevkiyatBitis").getDateValue();
-			var odemeTuru = this.getView().byId("odemeTuru").getValue();
-			var tasimaSekli = this.getView().byId("tasimaSekli").getValue();
-			var sektor = this.getView().byId("sektor").getValue();
-			var odemeBilgisi = this.getView().byId("odemeBilgisi").getValue();
-			var dokumanTuru = this.getView().byId("dokumanTuru").getValue();
-			var kopyalamaAdedi = this.getView().byId("kopyalamaAdedi").getValue();
-			var aciklama = this.getView().byId("aciklama").getValue();
-			var faturaFirmasi = this.getView().byId("faturaFirmasi").getValue();
-			var aliciFirma = this.getView().byId("aliciFirma").getValue();
-			var aciklamalar = this.getView().byId("aciklamalar").getValue();
-			console.log(odemeBilgisi);
-			console.log(olcuBirimi);
+			var t_adSoyad = this.getView().byId("adSoyad").getValue();
+			var t_urun = this.getView().byId("urun").getValue();
+			var t_urunAciklama = this.getView().byId("urunAciklama").getValue();
+			var t_teslimSekli = this.getView().byId("teslimSekli").getValue();
+			var t_paketleme = this.getView().byId("paketleme").getValue();
+			var t_miktar = this.getView().byId("miktar").getValue();
+			var t_olcuBirimi = this.getView().byId("olcuBirimi").getValue();
+			var t_paraBirimi = this.getView().byId("paraBirimi").getValue();
+			var t_sevkiyatBaslangic = this.getView().byId("sevkiyatBaslangic").getDateValue();
+			var t_sevkiyatBitis = this.getView().byId("sevkiyatBitis").getDateValue();
+			var t_odemeTuru = this.getView().byId("odemeTuru").getValue();
+			var t_tasimaSekli = this.getView().byId("tasimaSekli").getValue();
+			var t_sektor = this.getView().byId("sektor").getValue();
+			var t_odemeBilgisi = this.getView().byId("odemeBilgisi").getValue();
+			var t_dokumanTuru = this.getView().byId("dokumanTuru").getValue();
+			var t_kopyalamaAdedi = this.getView().byId("kopyalamaAdedi").getValue();
+			var t_aciklama = this.getView().byId("aciklama").getValue();
+			var t_faturaFirmasi = this.getView().byId("faturaFirmasi").getValue();
+			var t_aliciFirma = this.getView().byId("aliciFirma").getValue();
+			var t_aciklamalar = this.getView().byId("aciklamalar").getValue();
 			
+			var siparisData = {
+				adSoyad: t_adSoyad,
+				urun: t_urun,
+				urunAciklama: t_urunAciklama,
+				teslimSekli: t_teslimSekli,
+				paketleme: t_paketleme,
+				miktar: t_miktar,
+				olcuBirimi: t_olcuBirimi,
+				paraBirimi: t_paraBirimi,
+				sevkiyatBaslangic: t_sevkiyatBaslangic,
+				sevkiyatBitis: t_sevkiyatBitis,
+				odemeTuru: t_odemeTuru,
+				tasimaSekli: t_tasimaSekli,
+				sektor: t_sektor,
+				odemeBilgisi: t_odemeBilgisi,
+				dokumanTuru: t_dokumanTuru,
+				kopyaAdedi: t_kopyalamaAdedi,
+				aciklama: t_aciklama,
+				faturaFirmasi: t_faturaFirmasi,
+				aliciFirma: t_aliciFirma,
+				aciklamalar: t_aciklamalar,
+				durum: "Yeni Kayıt"
+			}
+
+			var oModel = new sap.ui.model.json.JSONModel(siparisData);
+			this.getView().setModel(oModel, "tekKalemSiparisModel");
+
 			var oBindingContext = oEvent.getSource().getBindingContext();
-			console.log(oBindingContext);
+
 			return new Promise(function(fnResolve) {
 
 				this.doNavigate("SiparisOzetEkrani", oBindingContext, fnResolve, "");
@@ -208,7 +233,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		onInit: function() {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("KontratsizTekKalemliSiparis").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
-
 		},
 		onExit: function() {
 

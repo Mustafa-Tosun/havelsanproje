@@ -225,7 +225,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="849px" top="171px">
                         <layout1:control>
-                            <StepInput value="0" min="0" max="10" step="1" largerStep="2" displayValuePrecision="0" width="126.00000000px" valueState="None" editable="true" enabled="true" visible="true"/>
+                            <StepInput id="kopyalamaAdedi" value="0" min="0" max="10" step="1" largerStep="2" displayValuePrecision="0" width="126.00000000px" valueState="None" editable="true" enabled="true" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="1073px" top="169px">
@@ -275,12 +275,12 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="162px" top="654px">
                         <layout1:control>
-                            <DatePicker width="160.0500030517578px" value="" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/y" change="handleChange"/>
+                            <DatePicker id="sevkiyatBaslangic" width="160.0500030517578px" value="" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/y" change="handleChange"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="401px" top="654px">
                         <layout1:control>
-                            <DatePicker width="152px" value="" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/y" change="handleChange"/>
+                            <DatePicker id="sevkiyatBitis" width="152px" value="" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/y" change="handleChange"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                 </layout1:positions>
