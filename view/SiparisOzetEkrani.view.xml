@@ -18,34 +18,29 @@
                             <Image src="/webapp/resources/etimadenResim.png" height="126.00000000px" width="426.60473562px" visible="true" densityAware="false"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="23px" top="232.01171875px">
+                    <layout1:PositionContainer left="0px" top="227px">
                         <layout1:control>
                             <Label text="Ürün Açıklama" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="16px" top="687.01171875px">
-                        <layout1:control>
-                            <Label text="Ödeme Vadesi" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiLargeMarginTop sapUiLargeMarginBottom sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
-                        </layout1:control>
-                    </layout1:PositionContainer>
-                    <layout1:PositionContainer left="25px" top="181.01171875px">
+                    <layout1:PositionContainer left="0px" top="166px">
                         <layout1:control>
                             <Label text="Ürün" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="23px" top="118.01171875px">
+                    <layout1:PositionContainer left="0px" top="102px">
                         <layout1:control>
                             <Label text="Ad Soyad" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="LTR" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="24px" top="287px">
+                    <layout1:PositionContainer left="0px" top="287px">
                         <layout1:control>
                             <Label text="Teslim Şekli" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="29px" top="420px">
+                    <layout1:PositionContainer left="0px" top="670px">
                         <layout1:control>
-                            <Label text="Miktar" design="Standard" width="51px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Ödeme Vadesi" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="10px" top="371px">
@@ -53,27 +48,57 @@
                             <Label text="Ad Soyad" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="false" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="28px" top="347px">
+                    <layout1:PositionContainer left="0px" top="404px">
+                        <layout1:control>
+                            <Label text="Miktar" design="Standard" width="51px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="442px">
+                        <layout1:control>
+                            <Label text="Sevkiyat Tarih Aralığı" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="473px">
+                        <layout1:control>
+                            <Label text="Başlangıç" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="532px">
+                        <layout1:control>
+                            <Label text="Bitiş" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="606px">
+                        <layout1:control>
+                            <Label text="Ödeme Türü" design="Standard" width="92px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="739px">
+                        <layout1:control>
+                            <Label text="Miktar" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="0px" top="347px">
                         <layout1:control>
                             <Label text="Paketleme" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="538px" top="166px">
+                    <layout1:PositionContainer left="529px" top="166px">
                         <layout1:control>
                             <Label text="Alıcı Firma" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="25px" top="46.01171875px">
+                    <layout1:PositionContainer left="0px" top="20px">
                         <layout1:control>
                             <Label text="Firma" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="532px" top="41px">
+                    <layout1:PositionContainer left="519px" top="20px">
                         <layout1:control>
                             <Label text="Ödeme Bilgisi" design="Standard" width="123.3125px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="531px" top="102px">
+                    <layout1:PositionContainer left="528px" top="102px">
                         <layout1:control>
                             <Label text="Fatura Firması" design="Standard" width="106.3125px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
@@ -88,29 +113,9 @@
                             <Label text="Açıklamalar" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="540px" top="236px">
+                    <layout1:PositionContainer left="541px" top="227px">
                         <layout1:control>
                             <Label text="Sektör" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
-                        </layout1:control>
-                    </layout1:PositionContainer>
-                    <layout1:PositionContainer left="31px" top="494.01171875px">
-                        <layout1:control>
-                            <Label text="Sevkiyat Tarih Aralığı" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
-                        </layout1:control>
-                    </layout1:PositionContainer>
-                    <layout1:PositionContainer left="57px" top="550.01171875px">
-                        <layout1:control>
-                            <Label text="Başlangıç" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
-                        </layout1:control>
-                    </layout1:PositionContainer>
-                    <layout1:PositionContainer left="59px" top="575.01171875px">
-                        <layout1:control>
-                            <Label text="Bitiş" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
-                        </layout1:control>
-                    </layout1:PositionContainer>
-                    <layout1:PositionContainer left="31px" top="647.01171875px">
-                        <layout1:control>
-                            <Label text="Ödeme Türü" design="Standard" width="92px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="529px" top="893.01171875px">
@@ -118,9 +123,94 @@
                             <Button text="Kaydet" type="Default" icon="sap-icon://save" iconFirst="true" width="129.1015625px" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="37px" top="760.01171875px">
+                    <layout1:PositionContainer left="121px" top="122px">
                         <layout1:control>
-                            <Label text="Miktar" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="552px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="40px">
+                        <layout1:control>
+                            <TextArea rows="2" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="247px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="186px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="485px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="424px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="367px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="307px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="650px" top="49px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="759px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="690px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="121px" top="618px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="650px" top="122px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="650px" top="186px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="650px" top="247px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="650px" top="307px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                    <layout1:PositionContainer left="650px" top="367px">
+                        <layout1:control>
+                            <TextArea rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                 </layout1:positions>

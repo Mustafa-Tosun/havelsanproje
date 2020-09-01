@@ -1,3 +1,4 @@
+var veriler_url = "https://stajprojebackend.herokuapp.com/siparisler";
 sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
@@ -174,7 +175,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			return new Promise(function(fnResolve) {
 
-				this.doNavigate("KontratsizCokKalemliSiparis", oBindingContext, fnResolve, "");
+				this.doNavigate("SiparisOzetEkrani", oBindingContext, fnResolve, "");
 			}.bind(this)).catch(function(err) {
 				if (err !== undefined) {
 					MessageBox.error(err.message);
@@ -205,6 +206,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				showSearchButton: true
 			});
 			this.oFilterBar.setBasicSearch(oBasicSearch);
+
+			var siparisVerileri = new sap.ui.model.json.JSONModel(veriler_url);
+			this.getView().setModel(siparisVerileri, "veri");
 
 		},
 		onExit: function() {

@@ -169,10 +169,32 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		_onRadioButtonGroupSelect: function() {
 
 		},
-		_onButtonPress: function(oEvent) {
-
+		onIleri: function(oEvent) {
+			var adSoyad = this.getView().byId("adSoyad").getValue();
+			var urun = this.getView().byId("urun").getValue();
+			var urunAciklama = this.getView().byId("urunAciklama").getValue();
+			var teslimSekli = this.getView().byId("teslimSekli").getValue();
+			var paketleme = this.getView().byId("paketleme").getValue();
+			var miktar = this.getView().byId("miktar").getValue();
+			var olcuBirimi = this.getView().byId("olcuBirimi").getValue();
+			var paraBirimi = this.getView().byId("paraBirimi").getValue();
+			var sevkiyatBaslangic = this.getView().byId("sevkiyatBaslangic").getDateValue();
+			var sevkiyatBitis = this.getView().byId("sevkiyatBitis").getDateValue();
+			var odemeTuru = this.getView().byId("odemeTuru").getValue();
+			var tasimaSekli = this.getView().byId("tasimaSekli").getValue();
+			var sektor = this.getView().byId("sektor").getValue();
+			var odemeBilgisi = this.getView().byId("odemeBilgisi").getValue();
+			var dokumanTuru = this.getView().byId("dokumanTuru").getValue();
+			var kopyalamaAdedi = this.getView().byId("kopyalamaAdedi").getValue();
+			var aciklama = this.getView().byId("aciklama").getValue();
+			var faturaFirmasi = this.getView().byId("faturaFirmasi").getValue();
+			var aliciFirma = this.getView().byId("aliciFirma").getValue();
+			var aciklamalar = this.getView().byId("aciklamalar").getValue();
+			console.log(odemeBilgisi);
+			console.log(olcuBirimi);
+			
 			var oBindingContext = oEvent.getSource().getBindingContext();
-
+			console.log(oBindingContext);
 			return new Promise(function(fnResolve) {
 
 				this.doNavigate("SiparisOzetEkrani", oBindingContext, fnResolve, "");

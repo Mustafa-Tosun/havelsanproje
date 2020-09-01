@@ -57,7 +57,7 @@
         <f:content>
             <VBox fitContainer="true">
                 <items>
-                    <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft" updateFinished="_onFioriListReportTableUpdateFinished">
+                    <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft" updateFinished="_onFioriListReportTableUpdateFinished" items ="{path: 'veri>/siparisler'}">
                         <headerToolbar>
                             <OverflowToolbar design="Transparent">
                                 <content>
@@ -105,12 +105,12 @@
                         <columns>
                             <Column width="auto" minScreenWidth="Phone">
                                 <header>
-                                    <Text text="RefNo" width="auto"/>
+                                    <Text text="Sipariş No" width="auto"/>
                                 </header>
                             </Column>
                             <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
                                 <header>
-                                    <Text text="Sipariş No" width="auto"/>
+                                    <Text text="Sipariş Detay No" width="auto"/>
                                 </header>
                             </Column>
                             <Column width="auto" minScreenWidth="Phone">
@@ -130,12 +130,12 @@
                             </Column>
                             <Column width="auto" minScreenWidth="Phone">
                                 <header>
-                                    <Text text="Sevkiyat Miktarı" width="auto"/>
+                                    <Text text="Sevkiyat Başlangıç Tarihi" width="auto"/>
                                 </header>
                             </Column>
                             <Column width="auto" minScreenWidth="Phone">
                                 <header>
-                                    <Text text="Sevkiyat Tarih Aralığı" width="auto"/>
+                                    <Text text="Sevkiyat Bitiş Tarihi" width="auto"/>
                                 </header>
                             </Column>
                             <Column width="auto" minScreenWidth="Phone">
@@ -145,16 +145,16 @@
                             </Column>
                         </columns>
                         <items>
-                            <ColumnListItem type="Active">
+                            <ColumnListItem type="Active" >
                                 <cells>
-                                    <ObjectIdentifier title="Text" text=""/>
-                                    <ObjectStatus text="Text" width="auto"/>
-                                    <ObjectStatus text="Text" width="auto"/>
-                                    <ObjectStatus text="Text" width="auto"/>
-                                    <ObjectStatus text="Text" width="auto"/>
-                                    <ObjectStatus text="Text" width="auto"/>
-                                    <ObjectStatus text="Text" width="auto"/>
-                                    <ObjectStatus text="Text" width="auto"/>
+                                    <ObjectIdentifier title="{veri>siparisNo}"/>
+                                    <ObjectIdentifier title="{veri>siparisDetayNo}"/>
+                                    <ObjectStatus text="{veri>sevkiyatBaslangic}" width="auto"/>
+                                    <ObjectStatus text="{veri>urun}" width="auto"/>
+                                    <ObjectStatus text="{veri>miktar}" width="auto"/>
+                                    <ObjectStatus text="{veri>sevkiyatBaslangic}" width="auto"/>
+                                    <ObjectStatus text="{veri>sevkiyatBitis}" width="auto"/>
+                                    <ObjectStatus text="{veri>durum}" width="auto"/>
                                 </cells>
                             </ColumnListItem>
                         </items>
