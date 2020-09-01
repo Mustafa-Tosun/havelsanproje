@@ -90,36 +90,37 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="162px" top="346px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="397px" valueState="None" maxWidth="100%" items="{path:'/teslimSekliSet', templateShareable:true}">
+                            <ComboBox editable="true" enabled="true" visible="true" width="397px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/teslimSekliSet', templateShareable:true}">
                                 <items>
-                                    <core:Item text="{teslim_sekli}" enabled="true" key="{teslim_sekli}"/>
+                                    <core:Item text="{staticJSONDATA>teslim_sekli}" enabled="true" key="{staticJSONDATA>teslim_sekli}"/>
                                 </items>
                             </ComboBox>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="159px" top="189px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="400px" valueState="None" maxWidth="100%" items="{path:'/Sayfa1Set', templateShareable:true}">
+                            <ComboBox editable="true" enabled="true" visible="true" width="400px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/Sayfa1Set', templateShareable:true}">
                                 <items>
-                                    <core:Item text="{ADI}" enabled="true" key="{ADI}"/>
+                                    <core:Item text="{staticJSONDATA>ADI}" enabled="true" key="{staticJSONDATA>ADI}"/>
                                 </items>
                             </ComboBox>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="162px" top="419px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="397px" valueState="None" maxWidth="100%" items="{path:'/paketlemeSet', templateShareable:true}">
+                            <ComboBox editable="true" enabled="true" visible="true" width="397px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/paketlemeSet', templateShareable:true}">
                                 <items>
-                                    <core:Item text="{Torba_Sekil_Tanim}" enabled="true" key="{Torba_Sekil_Tanim}"/>
+                                    <core:Item text="{staticJSONDATA>Torba_Sekil_Tanim}" enabled="true" key="{staticJSONDATA>Torba_Sekil_Tanim}"/>
                                 </items>
                             </ComboBox>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="431px" top="498px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="127px" valueState="None" maxWidth="100%" items="{path:'/paketlemeSet', templateShareable:true}">
+                            <ComboBox editable="true" enabled="true" visible="true" width="127px" valueState="None" maxWidth="100%">
                                 <items>
-                                    <core:Item text="{Birim}" enabled="true" key="{Birim}"/>
+                                    <core:Item text="KG" enabled="true" key="KG"/>
+                                    <core:Item text="TON" enabled="true" key="TON"/>
                                 </items>
                             </ComboBox>
                         </layout1:control>
@@ -143,18 +144,18 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="162px" top="713px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="393px" valueState="None" maxWidth="100%" items="{path:'/odemeturSet', templateShareable:true}">
+                            <ComboBox editable="true" enabled="true" visible="true" width="393px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/odemeturSet', templateShareable:true}">
                                 <items>
-                                    <core:Item text="{odeme_turu}" enabled="true" key="{odeme_turu}"/>
+                                    <core:Item text="{staticJSONDATA>odeme_turu}" enabled="true" key="{staticJSONDATA>odeme_turu}"/>
                                 </items>
                             </ComboBox>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="162px" top="767px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="391.00000000px" valueState="None" maxWidth="100%" items="{path:'/TasimasekliSet', templateShareable:true}">
+                            <ComboBox editable="true" enabled="true" visible="true" width="391.00000000px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/TasimasekliSet', templateShareable:true}">
                                 <items>
-                                    <core:Item text="{tasima_sekli}" enabled="true" key="{tasima_sekli}"/>
+                                    <core:Item text="{staticJSONDATA>tasima_sekli}" enabled="true" key="{staticJSONDATA>tasima_sekli}"/>
                                 </items>
                             </ComboBox>
                         </layout1:control>
@@ -171,9 +172,9 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="162px" top="846px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/SektorSet', templateShareable:true}">
+                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/SektorSet', templateShareable:true}">
                                 <items>
-                                    <core:Item text="{Sektor}" enabled="true" key="{Sektor}"/>
+                                    <core:Item text="{staticJSONDATA>Sektor}" enabled="true" key="{staticJSONDATA>Sektor}"/>
                                 </items>
                             </ComboBox>
                         </layout1:control>
@@ -215,9 +216,9 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="861px" top="99px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/dokumanturuSet', templateShareable:true}">
+                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/dokumanturuSet', templateShareable:true}">
                                 <items>
-                                    <core:Item text="{DOKUMAN_TR}" enabled="true" key="{DOKUMAN_TR}"/>
+                                    <core:Item text="{staticJSONDATA>DOKUMAN_TR}" enabled="true" key="{staticJSONDATA>DOKUMAN_TR}"/>
                                 </items>
                             </ComboBox>
                         </layout1:control>

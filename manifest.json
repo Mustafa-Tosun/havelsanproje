@@ -66,6 +66,10 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"uri": "i18n/i18n.properties"
+			},	
+			"staticJSONDATA": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "data/hierarchicalJSONData.json"
 			},
 			"": {
 				"dataSource": "local",

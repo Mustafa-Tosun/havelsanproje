@@ -33,20 +33,20 @@
                             </filterbar:FilterItem>
                             <filterbar:FilterItem label="Ürün" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1598877003988---0">
                                 <filterbar:control>
-                                    <MultiComboBox items="{path:'/Sayfa1Set', templateShareable:true}">
+                                    <ComboBox items="{path:'staticJSONDATA>/combined/Sayfa1Set', templateShareable:true}">
                                         <items>
-                                            <core:Item key="{ADI}" text="{ADI}"/>
+                                            <core:Item key="{staticJSONDATA>ADI}" text="{staticJSONDATA>ADI}"/>
                                         </items>
-                                    </MultiComboBox>
+                                    </ComboBox>
                                 </filterbar:control>
                             </filterbar:FilterItem>
                             <filterbar:FilterItem label="Durum" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1598877030891---0">
                                 <filterbar:control>
-                                    <MultiComboBox items="{path:'/DurumSet', templateShareable:true}">
+                                    <ComboBox items="{path:'staticJSONDATA>/combined/DurumSet', templateShareable:true}">
                                         <items>
-                                            <core:Item key="{Durum}" text="{Durum}"/>
+                                            <core:Item key="{staticJSONDATA>Durum}" text="{staticJSONDATA>Durum}"/>
                                         </items>
-                                    </MultiComboBox>
+                                    </ComboBox>
                                 </filterbar:control>
                             </filterbar:FilterItem>
                         </filterbar:filterItems>
