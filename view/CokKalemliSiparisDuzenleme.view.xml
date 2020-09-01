@@ -49,17 +49,17 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="119px" top="90px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598540461216-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
+                            <TextArea id="siparisNo" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="119px" top="216px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598549662805-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
+                            <TextArea id="urunAciklama" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="119px" top="27px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598540141055-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin" liveChange="_onTextAreaLiveChange"/>
+                            <TextArea id="adSoyad" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin" liveChange="_onTextAreaLiveChange"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="9px" top="301px">
@@ -156,7 +156,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="447px" top="735.01171875px">
                         <layout1:control>
-                            <TextArea rows="1" cols="11" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="aciklama" rows="1" cols="11" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="122px" top="686px">
@@ -186,12 +186,12 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="136px" top="527px">
                         <layout1:control>
-                            <TextArea rows="5" placeholder="Açıklamanızı Giriniz" cols="51" maxLength="200" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea id="aciklamalar" rows="5" placeholder="Açıklamanızı Giriniz" cols="51" maxLength="200" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="812px" top="466px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598624279109-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="faturaFirmasi" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="608px" top="227px">
@@ -240,7 +240,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="800px" top="192px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598610200029-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" rows="1" cols="24" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="miktar" rows="1" cols="24" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="797px" top="383px">
@@ -274,7 +274,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="144px" top="466px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598624290229-srekdr43ka4w63lz96fophf39_S9-et1cr37fenka8k2nv7q35snm14_S14" rows="1" cols="51" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="aliciFirma" rows="1" cols="51" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="1002px" top="168px">
