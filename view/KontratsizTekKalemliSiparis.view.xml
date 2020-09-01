@@ -50,7 +50,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="127px" top="88px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598540461216-emwtgiw74gerh39f2artjq4z8_S8-o5bfz2azdlpxwka7nyor5ahz12_S12" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
+                            <TextArea id="siparisNo" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="18px" top="540px">
@@ -60,7 +60,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="127px" top="234px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598549662805-emwtgiw74gerh39f2artjq4z8_S8-o5bfz2azdlpxwka7nyor5ahz12_S12" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
+                            <TextArea id="urunAciklama" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="321px" top="639.01171875px">
@@ -80,7 +80,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="127px" top="7px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598540141055-emwtgiw74gerh39f2artjq4z8_S8-o5bfz2azdlpxwka7nyor5ahz12_S12" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin" liveChange="_onTextAreaLiveChange"/>
+                            <TextArea id="adSoyad" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin" liveChange="_onTextAreaLiveChange"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="18px" top="688px">
@@ -139,7 +139,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="160px" top="493px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598610200029-emwtgiw74gerh39f2artjq4z8_S8-o5bfz2azdlpxwka7nyor5ahz12_S12" rows="1" cols="20" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="miktar" rows="1" cols="20" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="162px" top="713px">
@@ -230,7 +230,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="1073px" top="169px">
                         <layout1:control>
-                            <TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="aciklama" rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="608px" top="570px">
@@ -255,12 +255,12 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="745px" top="502px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598624290229-emwtgiw74gerh39f2artjq4z8_S8-o5bfz2azdlpxwka7nyor5ahz12_S12" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="aliciFirma" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="743px" top="576px">
                         <layout1:control>
-                            <TextArea rows="5" placeholder="Açıklama Giriniz" cols="60" maxLength="2" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="aciklamalar" rows="5" placeholder="Açıklama Giriniz" cols="60" maxLength="2" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="327px" top="473px">
@@ -270,7 +270,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="743px" top="438px">
                         <layout1:control>
-                            <TextArea id="sap_m_Page_0-content-sap_m_TextArea-1598624279109-emwtgiw74gerh39f2artjq4z8_S8-o5bfz2azdlpxwka7nyor5ahz12_S12" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="faturaFirmasi" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="162px" top="654px">
