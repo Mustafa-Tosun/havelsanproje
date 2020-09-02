@@ -5,6 +5,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast"
 ], function(BaseController, MessageBox, Utilities, History, MessageToast, siparisListesi) {
 	"use strict";
+	var enBuyukSiparisNo = -999;
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.KontratsizCokKalemliSiparis", {
 		handleRouteMatched: function(oEvent) {
@@ -218,7 +219,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						"faturaFirmasi": t_faturaFirmasi,
 						"aliciFirma": t_aliciFirma,
 						"aciklamalar": t_aciklamalar
-					}
+					},
 				]
 			};
 
@@ -293,7 +294,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oModel.loadData(url);
 
 			this.getView().setModel(oModel, "cokKalemSiparisModel");
-			var enBuyukSiparisNo = -999;
+			
 
 			jQuery.ajax({
 				type: "GET",
@@ -313,17 +314,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		onKaydet: function(oEvent) {
 
 			let oModel = this.getView().getModel("cokKalemSiparisModel");
-			let cokKalemSiparisJSON = oModel.getJSON();
-			let cokKalemSiparisJSONString = JSON.parse(cokKalemSiparisJSON);
+			let cokKalemSiparisJSONString = oModel.getJSON();
+			let cokKalemSiparisJSON = JSON.parse(cokKalemSiparisJSONString);
 
 			for(var i = 0; i < cokKalemSiparisJSONString.siparisler.length; i++) {
 				var currentOrder = cokKalemSiparisJSONString.siparisler[i];
 
 				jQuery.ajax({
 					type: "POST",
-					url: "https://stajprojebackend.herokuapp.com/siparis",
+					url: "https://stajprojebackend.herokuapp.com/cokluSiparis",
 					contentType: "application/json",
-					async: false,
 					data:JSON.stringify(currentOrder),
 					success: function() {
 						console.log("Siparis db ye kaydedildi: ");
