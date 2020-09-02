@@ -2,7 +2,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
 	"sap/ui/core/routing/History"
-], function(BaseController, MessageBox, Utilities, History) {
+], function(BaseController, MessageBox, Utilities, History, siparisListesi) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.KontratsizCokKalemliSiparis", {
@@ -183,7 +183,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		_onRadioButtonGroupSelect: function() {
 
 		},
-		_onButtonPress1: function(oEvent) {
+		onListeyeEkle: function(oEvent) {
 
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
@@ -201,6 +201,14 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("KontratsizCokKalemliSiparis").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 
+			var oModel = new sap.ui.model.json.JSONModel();
+			var oResourceBundle = this.getOwnerComponent()
+                .getModel("i18n")
+                .getResourceBundle();
+			var url = oResourceBundle.getText("dataUrl");
+			oModel.loadData(url);
+			this.getView().setModel(oModel, "cokKalemliSiparisModel");
+			siparisListesi = [];
 		},
 		onExit: function() {
 

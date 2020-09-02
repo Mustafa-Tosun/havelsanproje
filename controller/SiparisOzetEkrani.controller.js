@@ -1,8 +1,9 @@
 sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
-	"sap/ui/core/routing/History"
-], function(BaseController, MessageBox, Utilities, History) {
+	"sap/ui/core/routing/History",
+	"sap/m/MessageToast"
+], function(BaseController, MessageBox, Utilities, History, MessageToast) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.SiparisOzetEkrani", {
@@ -65,17 +66,64 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			return oQuery;
 
 		},
-		_onButtonPress: function(oEvent) {
+		onKaydet: function(oEvent) {
+			var oModel = this.getView().getModel("tekKalemSiparisModel");
+			var kopyaAdedi = oModel.getProperty("/kopyaAdedi").toString();
+			//console.log(oModel.getJSON());
+			var tekKalemSiparisJSON = {
+				"adSoyad": oModel.getProperty("/adSoyad"),
+				"urun": oModel.getProperty("/urun"),
+				"urunAciklama": oModel.getProperty("/urunAciklama"),
+				"teslimSekli": oModel.getProperty("/teslimSekli"),
+				"paketleme": oModel.getProperty("/paketleme"),
+				"miktar": oModel.getProperty("/miktar"),
+				"olcuBirimi": oModel.getProperty("/olcuBirimi"),
+				"paraBirimi": oModel.getProperty("/paraBirimi"),
+				"sevkiyatBaslangic": oModel.getProperty("/sevkiyatBaslangic"),
+				"sevkiyatBitis": oModel.getProperty("/sevkiyatBitis"),
+				"odemeTuru": oModel.getProperty("/odemeTuru"),
+				"tasimaSekli": oModel.getProperty("/tasimaSekli"),
+				"sektor": oModel.getProperty("/sektor"),
+				"odemeBilgisi": oModel.getProperty("/odemeBilgisi"),
+				"dokumanTuru": oModel.getProperty("/dokumanTuru"),
+				"kopyaAdedi": kopyaAdedi,
+				"aciklama": oModel.getProperty("/aciklama"),
+				"faturaFirmasi": oModel.getProperty("/faturaFirmasi"),
+				"aliciFirma": oModel.getProperty("/aliciFirma"),
+				"aciklamalar": oModel.getProperty("/aciklamalar")
+			};
+			// this.getView().getModel("tekKalemSiparisModel").getProperty("/adSoyad");
+			 console.log(tekKalemSiparisJSON);
+			// console.log(tekKalemSiparisJSON/oData);
+			// console.log(tekKalemSiparisJSON>oData);
+			// console.log(tekKalemSiparisJSON[0]);
+			jQuery.ajax({
+        		type: "POST",
+        		url: "https://stajprojebackend.herokuapp.com/siparis",
+        		contentType: "application/json",
+        		data:JSON.stringify(tekKalemSiparisJSON),
+				success: function() {
+					MessageToast.show("Siparis Başarıyla Kaydedildi.", {
+                        duration: 5000,
+                    });
+				},
+				error: function(error) {
+					console.log("HATA: ", error);
+						MessageToast.show("başarısız", {
+                        duration: 5000,
+                    });
+				}
+        	});
 
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
 			return new Promise(function(fnResolve) {
 
-				this.doNavigate("YurticiWebSiparisListesi", oBindingContext, fnResolve, "");
-			}.bind(this)).catch(function(err) {
-				if (err !== undefined) {
-					MessageBox.error(err.message);
-				}
+			// 	this.doNavigate("YurticiWebSiparisListesi", oBindingContext, fnResolve, "");
+			// }.bind(this)).catch(function(err) {
+			// 	if (err !== undefined) {
+			// 		MessageBox.error(err.message);
+			// 	}
 			});
 
 		},

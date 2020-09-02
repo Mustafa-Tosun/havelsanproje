@@ -191,33 +191,56 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var t_aliciFirma = this.getView().byId("aliciFirma").getValue();
 			var t_aciklamalar = this.getView().byId("aciklamalar").getValue();
 			
-			var siparisData = {
-				adSoyad: t_adSoyad,
-				urun: t_urun,
-				urunAciklama: t_urunAciklama,
-				teslimSekli: t_teslimSekli,
-				paketleme: t_paketleme,
-				miktar: t_miktar,
-				olcuBirimi: t_olcuBirimi,
-				paraBirimi: t_paraBirimi,
-				sevkiyatBaslangic: t_sevkiyatBaslangic,
-				sevkiyatBitis: t_sevkiyatBitis,
-				odemeTuru: t_odemeTuru,
-				tasimaSekli: t_tasimaSekli,
-				sektor: t_sektor,
-				odemeBilgisi: t_odemeBilgisi,
-				dokumanTuru: t_dokumanTuru,
-				kopyaAdedi: t_kopyalamaAdedi,
-				aciklama: t_aciklama,
-				faturaFirmasi: t_faturaFirmasi,
-				aliciFirma: t_aliciFirma,
-				aciklamalar: t_aciklamalar,
-				durum: "Yeni Kayıt"
-			}
+			// var siparisData = {
+			// 	adSoyad: t_adSoyad,
+			// 	urun: t_urun,
+			// 	urunAciklama: t_urunAciklama,
+			// 	teslimSekli: t_teslimSekli,
+			// 	paketleme: t_paketleme,
+			// 	miktar: t_miktar,
+			// 	olcuBirimi: t_olcuBirimi,
+			// 	paraBirimi: t_paraBirimi,
+			// 	sevkiyatBaslangic: t_sevkiyatBaslangic,
+			// 	sevkiyatBitis: t_sevkiyatBitis,
+			// 	odemeTuru: t_odemeTuru,
+			// 	tasimaSekli: t_tasimaSekli,
+			// 	sektor: t_sektor,
+			// 	odemeBilgisi: t_odemeBilgisi,
+			// 	dokumanTuru: t_dokumanTuru,
+			// 	kopyaAdedi: t_kopyalamaAdedi,
+			// 	aciklama: t_aciklama,
+			// 	faturaFirmasi: t_faturaFirmasi,
+			// 	aliciFirma: t_aliciFirma,
+			// 	aciklamalar: t_aciklamalar,
+			// 	durum: "Yeni Kayıt"
+			// }
 
-			var oModel = new sap.ui.model.json.JSONModel(siparisData);
-			this.getView().setModel(oModel, "tekKalemSiparisModel");
+			//var oModel = new sap.ui.model.json.JSONModel(siparisData);
+			//this.getView().setModel(oModel, "tekKalemSiparisModel");
 
+			this.getView().getModel("tekKalemSiparisModel").setProperty("/",{
+				"adSoyad":t_adSoyad,
+				"urun": t_urun,
+				"urunAciklama": t_urunAciklama,
+				"teslimSekli": t_teslimSekli,
+				"paketleme": t_paketleme,
+				"miktar": t_miktar,
+				"olcuBirimi": t_olcuBirimi,
+				"paraBirimi": t_paraBirimi,
+				"sevkiyatBaslangic": t_sevkiyatBaslangic,
+				"sevkiyatBitis": t_sevkiyatBitis,
+				"odemeTuru": t_odemeTuru,
+				"tasimaSekli": t_tasimaSekli,
+				"sektor": t_sektor,
+				"odemeBilgisi": t_odemeBilgisi,
+				"dokumanTuru": t_dokumanTuru,
+				"kopyaAdedi": t_kopyalamaAdedi,
+				"aciklama": t_aciklama,
+				"faturaFirmasi": t_faturaFirmasi,
+				"aliciFirma": t_aliciFirma,
+				"aciklamalar": t_aciklamalar
+			});
+			
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
 			return new Promise(function(fnResolve) {

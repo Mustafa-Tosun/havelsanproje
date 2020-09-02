@@ -284,7 +284,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="366px" top="824px">
                         <layout1:control>
-                            <Button text="Listeye Ekle" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+                            <Button text="Listeye Ekle" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="onListeyeEkle"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="37px" top="5.01171875px">

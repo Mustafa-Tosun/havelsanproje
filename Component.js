@@ -40,6 +40,7 @@ sap.ui.define([
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
+			this.setModel(new sap.ui.model.json.JSONModel, "tekKalemSiparisModel");
 			// delegate error handling
 			//errorHandling.register(this);
 
