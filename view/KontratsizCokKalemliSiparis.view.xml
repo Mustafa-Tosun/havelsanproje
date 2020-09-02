@@ -78,7 +78,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="610px" top="42.01171875px">
                         <layout1:control>
-                            <Label text="Başlangıç" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Başlangıç" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="799px" top="138px">
@@ -194,9 +194,9 @@
                             <TextArea id="faturaFirmasi" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="575px" top="1143px">
+                    <layout1:PositionContainer left="1100px" top="790px">
                         <layout1:control>
-                            <Button text="Kaydet" type="Default" icon="sap-icon://save" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiMediumMargin" press="_onButtonPress"/>
+                            <Button text="Kaydet" type="Default" icon="sap-icon://save" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiMediumMargin" press="onKaydet"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="608px" top="235px">
@@ -368,7 +368,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="915px" top="40px">
                         <layout1:control>
-                            <Label text="Bitiş" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Bitiş" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="983px" top="52.01171875px">

@@ -1,8 +1,9 @@
 sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
-	"sap/ui/core/routing/History"
-], function(BaseController, MessageBox, Utilities, History, siparisListesi) {
+	"sap/ui/core/routing/History",
+	"sap/m/MessageToast"
+], function(BaseController, MessageBox, Utilities, History, MessageToast, siparisListesi) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.KontratsizCokKalemliSiparis", {
@@ -149,20 +150,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
-		_onButtonPress: function(oEvent) {
-
-			var oBindingContext = oEvent.getSource().getBindingContext();
-
-			return new Promise(function(fnResolve) {
-
-				this.doNavigate("YurticiWebSiparisListesi", oBindingContext, fnResolve, "");
-			}.bind(this)).catch(function(err) {
-				if (err !== undefined) {
-					MessageBox.error(err.message);
-				}
-			});
-
-		},
 		convertTextToIndexFormatter: function(sTextValue) {
 			var oRadioButtonGroup = this.byId("sap_m_Page_0-content-sap_m_RadioButtonGroup-1598622896251-srekdr43ka4w63lz96fophf39_S9");
 			var oButtonsBindingInfo = oRadioButtonGroup.getBindingInfo("buttons");
@@ -212,6 +199,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						{
 						"adSoyad":t_adSoyad,
 						"urun": t_urun,
+						"siparisNo": enBuyukSiparisNo,
 						"urunAciklama": t_urunAciklama,
 						"teslimSekli": t_teslimSekli,
 						"paketleme": t_paketleme,
@@ -237,7 +225,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			if(JSON.stringify(this.getView().getModel("cokKalemSiparisModel").getProperty("/")) == '{}'){
 
 				this.getView().getModel("cokKalemSiparisModel").setProperty("/",tempJSON);
-				
+				var oModel = this.getView().getModel("cokKalemSiparisModel");
+				var oModelJSON = oModel.getJSON();
+				siparisListesi = JSON.parse(oModelJSON);
+				console.log(siparisListesi);
+
 			}
 			else{
 
@@ -301,8 +293,67 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oModel.loadData(url);
 
 			this.getView().setModel(oModel, "cokKalemSiparisModel");
-			this.getView().setModel(oModel, "cokKalemSiparisModel");
-			var siparisListesi = [];
+			var enBuyukSiparisNo = -999;
+
+			jQuery.ajax({
+				type: "GET",
+				url: "https://stajprojebackend.herokuapp.com/enBuyukSiparisNo",
+				contentType: "application/json",
+				async: true,
+				success: function(response) {
+					console.log("enBuyukSiparisNo alindi.");
+					enBuyukSiparisNo = response.enBuyukSiparisNo + 1;
+				},
+				error: function(error) {
+					console.log("HATA: enBuyukSiparisNo alinamadi.", error);
+				}
+			});
+
+		},
+		onKaydet: function(oEvent) {
+
+			let oModel = this.getView().getModel("cokKalemSiparisModel");
+			let cokKalemSiparisJSON = oModel.getJSON();
+			let cokKalemSiparisJSONString = JSON.parse(cokKalemSiparisJSON);
+
+			for(var i = 0; i < cokKalemSiparisJSONString.siparisler.length; i++) {
+				var currentOrder = cokKalemSiparisJSONString.siparisler[i];
+
+				jQuery.ajax({
+					type: "POST",
+					url: "https://stajprojebackend.herokuapp.com/siparis",
+					contentType: "application/json",
+					async: false,
+					data:JSON.stringify(currentOrder),
+					success: function() {
+						console.log("Siparis db ye kaydedildi: ");
+						MessageToast.show("Siparis Başarıyla Kaydedildi.", {
+							duration: 5000,
+						});
+					},
+					error: function(error) {
+						console.log("HATA: ", error);
+							MessageToast.show("başarısız", {
+							duration: 5000,
+						});
+					}
+				});
+				console.log(i);
+			}
+
+			this.getView().getModel("cokKalemSiparisModel").setProperty("/"); //liste sifirlama
+
+
+			var oBindingContext = oEvent.getSource().getBindingContext();
+
+			return new Promise(function(fnResolve) {
+
+				this.doNavigate("YurticiWebSiparisListesi", oBindingContext, fnResolve, "");
+			}.bind(this)).catch(function(err) {
+				if (err !== undefined) {
+					MessageBox.error(err.message);
+				}
+			});
 
 		},
 

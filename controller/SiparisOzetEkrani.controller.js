@@ -73,6 +73,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var tekKalemSiparisJSON = {
 				"adSoyad": oModel.getProperty("/adSoyad"),
 				"urun": oModel.getProperty("/urun"),
+				"siparisNo": enBuyukSiparisNo,
 				"urunAciklama": oModel.getProperty("/urunAciklama"),
 				"teslimSekli": oModel.getProperty("/teslimSekli"),
 				"paketleme": oModel.getProperty("/paketleme"),
@@ -184,6 +185,22 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		onInit: function() {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("SiparisOzetEkrani").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
+
+			var enBuyukSiparisNo = -999;
+
+			jQuery.ajax({
+				type: "GET",
+				url: "https://stajprojebackend.herokuapp.com/enBuyukSiparisNo",
+				contentType: "application/json",
+				async: true,
+				success: function(response) {
+					console.log("enBuyukSiparisNo alindi.");
+					enBuyukSiparisNo = response.enBuyukSiparisNo + 1;
+				},
+				error: function(error) {
+					console.log("HATA: enBuyukSiparisNo alinamadi.", error);
+				}
+			});
 
 		}
 	});
