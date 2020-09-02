@@ -27,11 +27,11 @@
                             <Label text="Ürün Açıklama" design="Standard" width="90.00000000px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="0px" top="78px">
+                    <!-- <layout1:PositionContainer left="0px" top="78px">
                         <layout1:control>
                             <Label text="Sipariş No" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiLargeMarginTop sapUiLargeMarginBottom sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
                         </layout1:control>
-                    </layout1:PositionContainer>
+                    </layout1:PositionContainer> -->
                     <layout1:PositionContainer left="0px" top="153px">
                         <layout1:control>
                             <Label text="Ürün" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiLargeMarginTop sapUiLargeMarginBottom sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
@@ -47,11 +47,11 @@
                             <Label text="Ad Soyad" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="false" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="119px" top="90px">
+                    <!-- <layout1:PositionContainer left="119px" top="90px">
                         <layout1:control>
                             <TextArea id="siparisNo" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
-                    </layout1:PositionContainer>
+                    </layout1:PositionContainer> -->
                     <layout1:PositionContainer left="119px" top="216px">
                         <layout1:control>
                             <TextArea id="urunAciklama" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
@@ -59,7 +59,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="119px" top="27px">
                         <layout1:control>
-                            <TextArea id="adSoyad" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin" liveChange="_onTextAreaLiveChange"/>
+                            <TextArea id="adSoyad" value="" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="9px" top="301px">
@@ -69,7 +69,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="150px" top="174px">
                         <layout1:control>
-                            <ComboBox placeholder="" editable="true" enabled="true" visible="true" width="399px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/Sayfa1Set', templateShareable:true}">
+                            <ComboBox id="urun" placeholder="" editable="true" enabled="true" visible="true" width="399px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/Sayfa1Set', templateShareable:true}">
                                 <items>
                                     <core:Item text="{staticJSONDATA>ADI}" enabled="true" key="{staticJSONDATA>ADI}"/>
                                 </items>
@@ -83,7 +83,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="799px" top="138px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/paketlemeSet', templateShareable:true}">
+                            <ComboBox id="paketleme" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/paketlemeSet', templateShareable:true}">
                                 <items>
                                     <core:Item text="{staticJSONDATA>Torba_Sekil_Tanim}" enabled="true" key="{staticJSONDATA>Torba_Sekil_Tanim}"/>
                                 </items>
@@ -97,7 +97,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="148px" top="326px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="404px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/odemeturSet', templateShareable:true}">
+                            <ComboBox id="odemeTuru" editable="true" enabled="true" visible="true" width="404px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/odemeturSet', templateShareable:true}">
                                 <items>
                                     <core:Item text="{staticJSONDATA>odeme_turu}" enabled="true" key="{staticJSONDATA>odeme_turu}"/>
                                 </items>
@@ -109,9 +109,9 @@
                             <Label text="Para Birimi" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="153px" top="393px">
+                    <layout1:PositionContainer left="145px" top="393px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="173px" valueState="None" maxWidth="100%">
+                            <ComboBox id="paraBirimi" editable="true" enabled="true" visible="true" width="173px" valueState="None" maxWidth="100%">
                                 <items>
                                     <core:Item text="TL" enabled="true" key="TL"/>
                                     <core:Item text="Dolar" enabled="true" key="Dolar"/>
@@ -121,14 +121,14 @@
                             </ComboBox>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="608px" top="310px">
+                    <layout1:PositionContainer left="608px" top="290px">
                         <layout1:control>
                             <Label text="Sektör" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="799px" top="307px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/SektorSet', templateShareable:true}">
+                            <ComboBox id="sektor" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/SektorSet', templateShareable:true}">
                                 <items>
                                     <core:Item text="{staticJSONDATA>Sektor}" enabled="true" key="{staticJSONDATA>Sektor}"/>
                                 </items>
@@ -142,7 +142,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="240px" top="675px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="307.48046875px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/dokumanturuSet', templateShareable:true}">
+                            <ComboBox id="dokumanTuru" editable="true" enabled="true" visible="true" width="307.48046875px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/dokumanturuSet', templateShareable:true}">
                                 <items>
                                     <core:Item text="{staticJSONDATA>DOKUMAN_TR}" enabled="true" key="{staticJSONDATA>DOKUMAN_TR}"/>
                                 </items>
@@ -156,7 +156,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="447px" top="735.01171875px">
                         <layout1:control>
-                            <TextArea id="aciklama" rows="1" cols="11" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
+                            <TextArea id="aciklama" rows="1" cols="11" maxLength="100" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="122px" top="686px">
@@ -176,7 +176,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="240px" top="733px">
                         <layout1:control>
-                            <StepInput value="0" min="0" max="100" step="1" largerStep="2" displayValuePrecision="0" width="126px" valueState="None" editable="true" enabled="true" visible="true"/>
+                            <StepInput id="kopyaAdedi" value="0" min="0" max="100" step="1" largerStep="2" displayValuePrecision="0" width="126px" valueState="None" editable="true" enabled="true" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="608px" top="442px">
@@ -189,7 +189,7 @@
                             <TextArea id="aciklamalar" rows="5" placeholder="Açıklamanızı Giriniz" cols="51" maxLength="200" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="812px" top="466px">
+                    <layout1:PositionContainer left="799px" top="466px">
                         <layout1:control>
                             <TextArea id="faturaFirmasi" rows="1" cols="50" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
@@ -199,19 +199,19 @@
                             <Button text="Kaydet" type="Default" icon="sap-icon://save" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiMediumMargin" press="_onButtonPress"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="608px" top="227px">
+                    <layout1:PositionContainer left="608px" top="235px">
                         <layout1:control>
                             <Label text="Teslim Şekli" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="608px" top="93px">
+                    <layout1:PositionContainer left="608px" top="120px">
                         <layout1:control>
                             <Label text="Paketleme" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="433px" top="393px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="118px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/TasimasekliSet', templateShareable:true}">
+                            <ComboBox id="tasimaSekli" editable="true" enabled="true" visible="true" width="118px" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/TasimasekliSet', templateShareable:true}">
                                 <items>
                                     <core:Item text="{staticJSONDATA>tasima_sekli}" enabled="true" key="{staticJSONDATA>tasima_sekli}"/>
                                 </items>
@@ -223,14 +223,14 @@
                             <Label text="Miktar" design="Standard" width="47.50000000px" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="304px" top="368px">
+                    <layout1:PositionContainer left="312px" top="372px">
                         <layout1:control>
                             <Label text="Taşıma Şekli" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="1122px" top="193px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="131px" valueState="None" maxWidth="100%">
+                            <ComboBox id="olcuBirimi" editable="true" enabled="true" visible="true" width="131px" valueState="None" maxWidth="100%">
                                 <items>
                                     <core:Item text="KG" enabled="true" key="KG"/>
                                     <core:Item text="TON" enabled="true" key="TON"/>
@@ -248,19 +248,19 @@
                             <TextArea id="miktar" rows="1" cols="24" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="797px" top="383px">
+                    <layout1:PositionContainer left="799px" top="385px">
                         <layout1:control>
-                            <RadioButtonGroup id="sap_m_Page_0-content-sap_m_RadioButtonGroup-1598622896251-srekdr43ka4w63lz96fophf39_S9" columns="8" selectedIndex="0" valueState="None" width="auto" editable="true" enabled="true" textDirection="Inherit" select="_onRadioButtonGroupSelect">
-                                <buttons>
-                                    <RadioButton text="Var" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
-                                    <RadioButton text="Yok" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
-                                </buttons>
-                            </RadioButtonGroup>
+                            <ComboBox id="odemeBilgisi" editable="true" enabled="true" visible="true" width="131px" valueState="None" maxWidth="100%">
+                                <items>
+                                    <core:Item text="Var" enabled="true" key="Var"/>
+                                    <core:Item text="Yok" enabled="true" key="Yok"/>
+                                </items>
+                            </ComboBox>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="799px" top="252px">
                         <layout1:control>
-                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/teslimSekliSet', templateShareable:true}">
+                            <ComboBox id="teslimSekli" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'staticJSONDATA>/combined/teslimSekliSet', templateShareable:true}">
                                 <items>
                                     <core:Item text="{staticJSONDATA>teslim_sekli}" enabled="true" key="{staticJSONDATA>teslim_sekli}"/>
                                 </items>
@@ -277,14 +277,14 @@
                             <TextArea id="aliciFirma" rows="1" cols="51" maxLength="0" wrapping="None" enabled="true" required="true" valueStateText="Invalid entry" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="1002px" top="168px">
+                    <layout1:PositionContainer left="1002px" top="175px">
                         <layout1:control>
                             <Label text="Ölçü Birimi" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="366px" top="824px">
                         <layout1:control>
-                            <Button text="Listeye Ekle" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+                            <Button text="Listeye Ekle" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="onListeyeEkle"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="37px" top="5.01171875px">
@@ -296,7 +296,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="29px" top="881px">
                         <layout1:control>
-                            <Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+                            <Table id="ozetTablosu" width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" items="{path:'cokKalemSiparisModel>/siparisler'}">
                                 <infoToolbar>
                                     <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
                                         <content>
@@ -308,13 +308,13 @@
                                 <columns>
                                     <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
                                         <header>
-                                            <Text text="Sipariş No" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="Ürün" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </header>
                                         <footer/>
                                     </Column>
                                     <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
                                         <header>
-                                            <Text text="Ürün" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="Alıcı Firma" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </header>
                                         <footer/>
                                     </Column>
@@ -326,19 +326,19 @@
                                     </Column>
                                     <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
                                         <header>
-                                            <Text text="Birim Fiyat" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-                                        </header>
-                                        <footer/>
-                                    </Column>
-                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                                        <header>
-                                            <Text text="Toplam Tutar" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-                                        </header>
-                                        <footer/>
-                                    </Column>
-                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                                        <header>
                                             <Text text="Paketleme" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Sevkiyat Başlangıç" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Sevkiyat Bitiş" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </header>
                                         <footer/>
                                     </Column>
@@ -346,59 +346,19 @@
                                 <items>
                                     <ColumnListItem type="Active">
                                         <cells>
-                                            <ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+                                            <ObjectIdentifier title="{cokKalemSiparisModel>urun}" titleActive="false" visible="true"/>
                                             <layout:HorizontalLayout>
-                                                <layout:content/>
+                                                <ObjectStatus text="{cokKalemSiparisModel>aliciFirma}" titleActive="false" visible="true"/>
                                             </layout:HorizontalLayout>
                                             <layout:HorizontalLayout>
-                                                <layout:content/>
+                                                <ObjectStatus text="{cokKalemSiparisModel>miktar}" titleActive="false" visible="true"/>
                                             </layout:HorizontalLayout>
-                                            <ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+                                                <ObjectStatus text="{cokKalemSiparisModel>paketleme}" titleActive="false" visible="true"/>
                                             <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                        </cells>
-                                    </ColumnListItem>
-                                    <ColumnListItem type="Active">
-                                        <cells>
-                                            <ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
+                                                <ObjectStatus text="{cokKalemSiparisModel>sevkiyatBaslangic}" titleActive="false" visible="true"/>
                                             </layout:HorizontalLayout>
                                             <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                            <ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                        </cells>
-                                    </ColumnListItem>
-                                    <ColumnListItem type="Active">
-                                        <cells>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
-                                            </layout:HorizontalLayout>
-                                            <layout:HorizontalLayout>
-                                                <layout:content/>
+                                                <ObjectStatus text="{cokKalemSiparisModel>sevkiyatBitis}" titleActive="false" visible="true"/>
                                             </layout:HorizontalLayout>
                                         </cells>
                                     </ColumnListItem>
@@ -406,19 +366,19 @@
                             </Table>
                         </layout1:control>
                     </layout1:PositionContainer>
-                    <layout1:PositionContainer left="915px" top="44.01171875px">
+                    <layout1:PositionContainer left="915px" top="40px">
                         <layout1:control>
                             <Label text="Bitiş" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="983px" top="52.01171875px">
                         <layout1:control>
-                            <DatePicker width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>
+                            <DatePicker id="sevkiyatBitis" width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="725px" top="53.01171875px">
                         <layout1:control>
-                            <DatePicker width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>
+                            <DatePicker id="sevkiyatBaslangic" width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                 </layout1:positions>

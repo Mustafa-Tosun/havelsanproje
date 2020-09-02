@@ -185,7 +185,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var t_sektor = this.getView().byId("sektor").getValue();
 			var t_odemeBilgisi = this.getView().byId("odemeBilgisi").getValue();
 			var t_dokumanTuru = this.getView().byId("dokumanTuru").getValue();
-			var t_kopyalamaAdedi = this.getView().byId("kopyalamaAdedi").getValue();
+			var t_kopyalamaAdedi = this.getView().byId("kopyaAdedi").getValue();
 			var t_aciklama = this.getView().byId("aciklama").getValue();
 			var t_faturaFirmasi = this.getView().byId("faturaFirmasi").getValue();
 			var t_aliciFirma = this.getView().byId("aliciFirma").getValue();
@@ -234,7 +234,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				"sektor": t_sektor,
 				"odemeBilgisi": t_odemeBilgisi,
 				"dokumanTuru": t_dokumanTuru,
-				"kopyaAdedi": t_kopyalamaAdedi,
+				"kopyaAdedi": t_kopyaAdedi,
 				"aciklama": t_aciklama,
 				"faturaFirmasi": t_faturaFirmasi,
 				"aliciFirma": t_aliciFirma,

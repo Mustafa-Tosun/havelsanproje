@@ -225,7 +225,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="849px" top="171px">
                         <layout1:control>
-                            <StepInput id="kopyalamaAdedi" value="0" min="0" max="10" step="1" largerStep="2" displayValuePrecision="0" width="126.00000000px" valueState="None" editable="true" enabled="true" visible="true"/>
+                            <StepInput id="kopyaAdedi" value="0" min="0" max="10" step="1" largerStep="2" displayValuePrecision="0" width="126.00000000px" valueState="None" editable="true" enabled="true" visible="true"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="1073px" top="169px">

@@ -185,6 +185,97 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		},
 		onListeyeEkle: function(oEvent) {
 
+			var t_adSoyad = this.getView().byId("adSoyad").getValue();
+			var t_urun = this.getView().byId("urun").getValue();
+			var t_urunAciklama = this.getView().byId("urunAciklama").getValue();
+			var t_teslimSekli = this.getView().byId("teslimSekli").getValue();
+			var t_paketleme = this.getView().byId("paketleme").getValue();
+			var t_miktar = this.getView().byId("miktar").getValue();
+			var t_olcuBirimi = this.getView().byId("olcuBirimi").getValue();
+			var t_paraBirimi = this.getView().byId("paraBirimi").getValue();
+			var t_sevkiyatBaslangic = this.getView().byId("sevkiyatBaslangic").getDateValue();
+			var t_sevkiyatBitis = this.getView().byId("sevkiyatBitis").getDateValue();
+			var t_odemeTuru = this.getView().byId("odemeTuru").getValue();
+			var t_tasimaSekli = this.getView().byId("tasimaSekli").getValue();
+			var t_sektor = this.getView().byId("sektor").getValue();
+			var t_odemeBilgisi = this.getView().byId("odemeBilgisi").getValue();
+			var t_dokumanTuru = this.getView().byId("dokumanTuru").getValue();
+			var t_kopyalamaAdedi = this.getView().byId("kopyaAdedi").getValue();
+			var t_aciklama = this.getView().byId("aciklama").getValue();
+			var t_faturaFirmasi = this.getView().byId("faturaFirmasi").getValue();
+			var t_aliciFirma = this.getView().byId("aliciFirma").getValue();
+			var t_aciklamalar = this.getView().byId("aciklamalar").getValue();
+
+
+			var tempJSON = {
+				siparisler: [
+						{
+						"adSoyad":t_adSoyad,
+						"urun": t_urun,
+						"urunAciklama": t_urunAciklama,
+						"teslimSekli": t_teslimSekli,
+						"paketleme": t_paketleme,
+						"miktar": t_miktar,
+						"olcuBirimi": t_olcuBirimi,
+						"paraBirimi": t_paraBirimi,
+						"sevkiyatBaslangic": t_sevkiyatBaslangic,
+						"sevkiyatBitis": t_sevkiyatBitis,
+						"odemeTuru": t_odemeTuru,
+						"tasimaSekli": t_tasimaSekli,
+						"sektor": t_sektor,
+						"odemeBilgisi": t_odemeBilgisi,
+						"dokumanTuru": t_dokumanTuru,
+						"kopyaAdedi": t_kopyalamaAdedi,
+						"aciklama": t_aciklama,
+						"faturaFirmasi": t_faturaFirmasi,
+						"aliciFirma": t_aliciFirma,
+						"aciklamalar": t_aciklamalar
+					}
+				]
+			};
+
+			if(JSON.stringify(this.getView().getModel("cokKalemSiparisModel").getProperty("/")) == '{}'){
+
+				this.getView().getModel("cokKalemSiparisModel").setProperty("/",tempJSON);
+				
+			}
+			else{
+
+				this.getView().getModel("cokKalemSiparisModel").getProperty("/");
+				var oModel = this.getView().getModel("cokKalemSiparisModel");
+				var oModelJSON = oModel.getJSON();
+				siparisListesi = JSON.parse(oModelJSON);
+				console.log(siparisListesi);
+				siparisListesi.siparisler.push(tempJSON.siparisler[0]);
+				this.getView().getModel("cokKalemSiparisModel").setProperty("/", siparisListesi);
+
+			}
+
+
+			/*
+			this.getView().getModel("cokKalemSiparisModel").setProperty("/", tempJSON);
+
+			var oModel = this.getView().getModel("cokKalemSiparisModel");
+			var oModelJSON = oModel.getJSON();
+			console.log("Eklenen JSON");
+			console.log(oModelJSON);
+
+			var siparisListesi = JSON.parse(oModelJSON);
+			//console.log(tempJsonArray.siparisler);
+			siparisListesi.siparisler.push(JSON.parse(oModelJSON).siparisler[0]);
+
+			var tempJSONString = JSON.stringify(siparisListesi)
+			console.log(tempJSONString);
+
+			this.getView().getModel("cokKalemSiparisModel").setProperty("/",siparisListesi);
+*/
+			//var oModel2= new sap.ui.model.json.JSONModel(siparisListesi);
+			//this.getView().setModel(oModel2, "cokKalemSiparisModel");
+			//var oModelJSON2 = oModel2.getJSON();
+			//console.log("Tum modelin JSON i");
+			//console.log(oModelJSON2);
+
+
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
 			return new Promise(function(fnResolve) {
@@ -204,12 +295,25 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var oModel = new sap.ui.model.json.JSONModel();
 			var oResourceBundle = this.getOwnerComponent()
                 .getModel("i18n")
-                .getResourceBundle();
+				.getResourceBundle();
+				
 			var url = oResourceBundle.getText("dataUrl");
 			oModel.loadData(url);
-			this.getView().setModel(oModel, "cokKalemliSiparisModel");
-			siparisListesi = [];
+
+			this.getView().setModel(oModel, "cokKalemSiparisModel");
+			this.getView().setModel(oModel, "cokKalemSiparisModel");
+			var siparisListesi = [];
+
 		},
+
+		onItemSelected: function(oEvent) {
+			//var oSelectedItem = oEvent.getSource();
+			//var oContext = oSelectedItem.getBindingContext('cokKalemSiparisModel');
+			//var sPath = oContext.getPath();
+			//var oSummaryTable = this.byId("ozetTablosu");
+			//oSummaryTable.bindElement({ path: sPath, model: "cokKalemSiparisModel" });
+		},
+
 		onExit: function() {
 
 			// to destroy templates for bound aggregations when templateShareable is true on exit to prevent duplicateId issue
