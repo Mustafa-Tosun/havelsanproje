@@ -1,9 +1,16 @@
 sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
-	"sap/ui/core/routing/History"
-], function(BaseController, MessageBox, Utilities, History) {
+	"sap/ui/core/routing/History",
+	"sap/m/Dialog",
+	"sap/m/DialogType",
+	"sap/m/Button",
+	"sap/m/ButtonType",
+	"sap/m/Text",
+	"sap/m/MessageToast"
+], function(BaseController, MessageBox, Utilities, History, Dialog,	DialogType, Button, ButtonType, Text, MessageToast) {
 	"use strict";
+	var confirmed = false;
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.TekKalemliSiparisDuzenlemeEkrani", {
 		handleRouteMatched: function(oEvent) {
@@ -166,103 +173,100 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 		},
-		_onRadioButtonGroupSelect: function() {
-
-		},
 		onDegisikleriKaydet: function(oEvent) {
 
-			oEvent = jQuery.extend(true, {}, oEvent);
+			if (!this.oApproveDialog2) {
+				
+				var oBindingContext = oEvent.getSource().getBindingContext();
 
-			return new Promise(function(fnResolve) {
-					fnResolve(true);
-				})
-				.then(function(result) {
-					var oView = this.getView(),
-						oController = this,
-						status = true,
-						requiredFieldInfo = [{
-							"id": "sap_m_Page_0-content-sap_m_TextArea-1598540461216-emwtgiw74gerh39f2artjq4z8_S8"
-						}, {
-							"id": "sap_m_Page_0-content-sap_m_TextArea-1598549662805-emwtgiw74gerh39f2artjq4z8_S8"
-						}, {
-							"id": "sap_m_Page_0-content-sap_m_TextArea-1598540141055-emwtgiw74gerh39f2artjq4z8_S8"
-						}, {
-							"id": "sap_m_Page_0-content-sap_m_TextArea-1598610200029-emwtgiw74gerh39f2artjq4z8_S8"
-						}];
-					if (requiredFieldInfo.length) {
-						status = this.handleChangeValuestate(requiredFieldInfo, oView);
-					}
-					if (status) {
-						return new Promise(function(fnResolve, fnReject) {
-							var oModel = oController.oModel;
-							var fnResetChangesAndReject = function(sMessage) {
-								oModel.resetChanges();
-								fnReject(new Error(sMessage));
+				this.oApproveDialog2 = new Dialog({
+					type: DialogType.Message,
+					title: "İptal",
+					content: new Text({
+						text: "Bu değişikliği yapmak istediğinize emin misiniz?",
+					}),
+					beginButton: new Button({
+						type: ButtonType.Emphasized,
+						text: "Evet",
+						press: function () {
+							
+							var oModel = this.getView().getModel("tekKalemSiparisDuzenleModel");
+							var kopyaAdedi = oModel.getProperty("/kopyaAdedi").toString();
+
+							var tekKalemSiparisDuzenleModelJSON = {
+								"adSoyad": oModel.getProperty("/adSoyad"),
+								"urun": oModel.getProperty("/urun"),
+								"urunAciklama": oModel.getProperty("/urunAciklama"),
+								"teslimSekli": oModel.getProperty("/teslimSekli"),
+								"paketleme": oModel.getProperty("/paketleme"),
+								"miktar": oModel.getProperty("/miktar"),
+								"olcuBirimi": oModel.getProperty("/olcuBirimi"),
+								"paraBirimi": oModel.getProperty("/paraBirimi"),
+								"sevkiyatBaslangic": oModel.getProperty("/sevkiyatBaslangic"),
+								"sevkiyatBitis": oModel.getProperty("/sevkiyatBitis"),
+								"odemeTuru": oModel.getProperty("/odemeTuru"),
+								"tasimaSekli": oModel.getProperty("/tasimaSekli"),
+								"sektor": oModel.getProperty("/sektor"),
+								"odemeBilgisi": oModel.getProperty("/odemeBilgisi"),
+								"dokumanTuru": oModel.getProperty("/dokumanTuru"),
+								"kopyaAdedi": kopyaAdedi,
+								"aciklama": oModel.getProperty("/aciklama"),
+								"faturaFirmasi": oModel.getProperty("/faturaFirmasi"),
+								"aliciFirma": oModel.getProperty("/aliciFirma"),
+								"aciklamalar": oModel.getProperty("/aciklamalar")
 							};
-							if (oModel && oModel.hasPendingChanges()) {
-								oModel.submitChanges({
-									success: function(oResponse) {
-										var oBatchResponse = oResponse.__batchResponses[0];
-										var oChangeResponse = oBatchResponse.__changeResponses && oBatchResponse.__changeResponses[0];
-										if (oChangeResponse && oChangeResponse.data) {
-											var sNewContext = oModel.getKey(oChangeResponse.data);
-											oView.unbindObject();
-											oView.bindObject({
-												path: "/" + sNewContext
-											});
-											if (window.history && window.history.replaceState) {
-												window.history.replaceState(undefined, undefined, window.location.hash.replace(encodeURIComponent(oController.sContext), encodeURIComponent(sNewContext)));
-											}
-											oModel.refresh();
-											fnResolve();
-										} else if (oChangeResponse && oChangeResponse.response) {
-											fnResetChangesAndReject(oChangeResponse.message);
-										} else if (!oChangeResponse && oBatchResponse.response) {
-											fnResetChangesAndReject(oBatchResponse.message);
-										} else {
-											oModel.refresh();
-											fnResolve();
-										}
-									},
-									error: function(oError) {
-										fnReject(new Error(oError.message));
-									}
-								});
-							} else {
-								fnResolve();
-							}
-						});
-					}
-				}.bind(this))
-				.then(function(result) {
-					if (result === false) {
-						return false;
-					} else {
 
-						return new Promise(function(fnResolve) {
-							
-							sap.m.MessageBox.confirm("Yaptığınız değişikleri kaydetmek istediğinize emin misiniz?", {
-								title: "Uyarı!!!",
-								actions: ["Evet", "Hayır"],
-								onClose: function(sActionClicked) {
-									fnResolve(sActionClicked === "Evet");
-									//if(sActionClicked === "Evet"){
-										
-									//}
+							var selectedIndex = this.getOwnerComponent().getModel("itemIndexModel").getProperty("/");
+
+							var tempUrl = "https://stajprojebackend.herokuapp.com/siparisDuzenle/" + selectedIndex;
+
+							jQuery.ajax({
+								type: "PUT",
+								url: tempUrl,
+								contentType: "application/json",
+								async: false,
+								data:JSON.stringify(tekKalemSiparisDuzenleModelJSON),
+								success: function(response) {
+									confirmed = true;
+									MessageToast.show("Siparis Başarıyla Düzenlendi.", {
+										duration: 5000,
+									});
 								},
-								
+								error: function(error) {
+									MessageToast.show("Siparis Düzenlenemedi.", {
+										duration: 5000,
+									});
+									console.log("HATA: ", error);
+								}
 							});
-							
-							
-						});
+							this.oApproveDialog2.close();
+						}.bind(this),
+					}),
+					endButton: new Button({
+						text: "Vazgeç",
+						press: function () {
+							this.oApproveDialog2.close();
+						}.bind(this),
+					}),
+					
+				});
+				
 
-					}
+			}
+			/*
+			if(confirmed){
+				confirmed = false;
+				return new Promise(function(fnResolve) {
+
+					this.doNavigate("YurticiWebSiparisListesi", oBindingContext, fnResolve, "");
 				}.bind(this)).catch(function(err) {
 					if (err !== undefined) {
 						MessageBox.error(err.message);
 					}
 				});
-				
+			}*/
+
+			this.oApproveDialog2.open();
 		},
 		handleChangeValuestate: function(requiredFieldInfo, oView) {
 			var status = true;

@@ -286,15 +286,6 @@
                 </layout1:positions>
             </layout1:AbsoluteLayout>
         </content>
-        <footer>
-            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
-                <content>
-                    <ToolbarSpacer width=""/>
-                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-                </content>
-            </OverflowToolbar>
-        </footer>
         <headerContent/>
         <subHeader/>
         <customHeader/>

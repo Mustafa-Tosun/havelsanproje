@@ -262,6 +262,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var tempUrl = "https://stajprojebackend.herokuapp.com/siparisDon/" + selectedIndex;
 			var responseJSON = {};
 			this.getOwnerComponent().getModel("sayfaIsmiModel").setProperty("/", sayfaIsmi);
+			this.getOwnerComponent().getModel("itemIndexModel").setProperty("/", selectedIndex);
 
 			jQuery.ajax({
 				type: "GET",
@@ -278,8 +279,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 			this.getView().getModel("tekKalemSiparisDuzenleModel").setProperty("/",responseJSON);
-
-			console.log(responseJSON);
 
 			var oBindingContext = oEvent.getSource().getBindingContext();
 

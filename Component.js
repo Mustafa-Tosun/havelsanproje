@@ -47,6 +47,8 @@ sap.ui.define([
 			this.setModel(new sap.ui.model.json.JSONModel, "cokKalemSiparisModel");
 
 			this.setModel(new sap.ui.model.json.JSONModel, "sayfaIsmiModel");
+			
+			this.setModel(new sap.ui.model.json.JSONModel, "itemIndexModel");
 			// delegate error handling
 			//errorHandling.register(this);
 
