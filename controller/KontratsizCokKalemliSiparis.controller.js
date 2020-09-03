@@ -312,50 +312,46 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 		},
 		onKaydet: function(oEvent) {
+            console.log("onKaydet");
+            let oModel = this.getView().getModel("cokKalemSiparisModel");
+            let cokKalemSiparisJSON = oModel.getJSON();
+            let cokKalemSiparisJSONString = JSON.parse(cokKalemSiparisJSON);
+            console.log(cokKalemSiparisJSONString);
+            jQuery.ajax({
+                type: "POST",
+                url: "http://localhost:3000/cokluSiparis",
+                contentType: "application/json",
+                async: false,
+                data:JSON.stringify(cokKalemSiparisJSONString),
+                success: function() {
+                    console.log("Siparis db ye kaydedildi: ");
+                    MessageToast.show("Siparis Başarıyla Kaydedildi.", {
+                        duration: 5000,
+                    });
+                },
+                error: function(error) {
+                    console.log("HATA: ", error);
+                        MessageToast.show("başarısız", {
+                        duration: 5000,
+                    });
+                }
+            });
 
-			let oModel = this.getView().getModel("cokKalemSiparisModel");
-			let cokKalemSiparisJSONString = oModel.getJSON();
-			let cokKalemSiparisJSON = JSON.parse(cokKalemSiparisJSONString);
-
-			for(var i = 0; i < cokKalemSiparisJSONString.siparisler.length; i++) {
-				var currentOrder = cokKalemSiparisJSONString.siparisler[i];
-
-				jQuery.ajax({
-					type: "POST",
-					url: "https://stajprojebackend.herokuapp.com/cokluSiparis",
-					contentType: "application/json",
-					data:JSON.stringify(currentOrder),
-					success: function() {
-						console.log("Siparis db ye kaydedildi: ");
-						MessageToast.show("Siparis Başarıyla Kaydedildi.", {
-							duration: 5000,
-						});
-					},
-					error: function(error) {
-						console.log("HATA: ", error);
-							MessageToast.show("başarısız", {
-							duration: 5000,
-						});
-					}
-				});
-				console.log(i);
-			}
-
-			this.getView().getModel("cokKalemSiparisModel").setProperty("/"); //liste sifirlama
+            this.getView().getModel("cokKalemSiparisModel").setProperty("/"); //liste sifirlama
 
 
-			var oBindingContext = oEvent.getSource().getBindingContext();
+            var oBindingContext = oEvent.getSource().getBindingContext();
 
-			return new Promise(function(fnResolve) {
+            return new Promise(function(fnResolve) {
 
-				this.doNavigate("YurticiWebSiparisListesi", oBindingContext, fnResolve, "");
-			}.bind(this)).catch(function(err) {
-				if (err !== undefined) {
-					MessageBox.error(err.message);
-				}
-			});
+                this.doNavigate("YurticiWebSiparisListesi", oBindingContext, fnResolve, "");
+            }.bind(this)).catch(function(err) {
+                if (err !== undefined) {
+                    MessageBox.error(err.message);
+                }
+            });
 
-		},
+        },
 
 		onItemSelected: function(oEvent) {
 			//var oSelectedItem = oEvent.getSource();

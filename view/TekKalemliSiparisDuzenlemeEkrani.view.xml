@@ -280,7 +280,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="521px" top="944px">
                         <layout1:control>
-                            <Button text="Değişiklikleri Kaydet" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiMediumMargin" press="_onButtonPress"/>
+                            <Button text="Değişiklikleri Kaydet" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiMediumMargin" press="onDegisikleriKaydet"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                 </layout1:positions>

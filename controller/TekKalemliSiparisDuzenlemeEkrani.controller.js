@@ -169,7 +169,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		_onRadioButtonGroupSelect: function() {
 
 		},
-		_onButtonPress: function(oEvent) {
+		onDegisikleriKaydet: function(oEvent) {
 
 			oEvent = jQuery.extend(true, {}, oEvent);
 			return new Promise(function(fnResolve) {
@@ -194,7 +194,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					if (status) {
 						return new Promise(function(fnResolve, fnReject) {
 							var oModel = oController.oModel;
-
 							var fnResetChangesAndReject = function(sMessage) {
 								oModel.resetChanges();
 								fnReject(new Error(sMessage));
@@ -238,14 +237,17 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					if (result === false) {
 						return false;
 					} else {
+
 						return new Promise(function(fnResolve) {
+
 							sap.m.MessageBox.confirm("Yaptığınız değişikleri kaydetmek istediğinize emin misiniz?", {
 								title: "Uyarı!!!",
 								actions: ["Evet", "Hayır"],
 								onClose: function(sActionClicked) {
 									fnResolve(sActionClicked === "Evet");
-								}
+								},
 							});
+							
 						});
 
 					}
@@ -254,6 +256,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						MessageBox.error(err.message);
 					}
 				});
+				
 		},
 		handleChangeValuestate: function(requiredFieldInfo, oView) {
 			var status = true;
