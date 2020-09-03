@@ -319,7 +319,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
             console.log(cokKalemSiparisJSONString);
             jQuery.ajax({
                 type: "POST",
-                url: "http://localhost:3000/cokluSiparis",
+                url: "https://stajprojebackend.herokuapp.com/cokluSiparis",
                 contentType: "application/json",
                 async: false,
                 data:JSON.stringify(cokKalemSiparisJSONString),
