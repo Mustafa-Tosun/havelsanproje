@@ -221,10 +221,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		},
 		onSil: function(oEvent) {
 
-			var tempUrl = "https://stajprojebackend.herokuapp.com/onSil/" + selectedIndex;
+			var tempUrl = "https://stajprojebackend.herokuapp.com/siparisSil/" + selectedIndex;
 
 			jQuery.ajax({
-				type: "GET",
+				type: "DELETE",
 				url: tempUrl,
 				contentType: "application/json",
 				async: false,
@@ -244,12 +244,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
 			return new Promise(function(fnResolve) {
+				setTimeout(() => {
+					location.reload();
+				}, 1000);
 
-				this.doNavigate("TekKalemliSiparisDuzenlemeEkrani", oBindingContext, fnResolve, "");
+				this.doNavigate("YurticiWebSiparisListesi", oBindingContext, fnResolve, "");
 			}.bind(this)).catch(function(err) {
 				if (err !== undefined) {
 					MessageBox.error(err.message);
 				}
+
 			});
 
 		},
@@ -293,11 +297,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		onInit: function() {
 
 			this.aKeys = [
-				"siparisNo", "siparisDetayNo", "urun", "durum"
+				"urun", "durum"
 			];
 
-			this.oSiparisNo = this.getSelect("siparisNoInput");
-			this.oSiparisDetayNo = this.getSelect("siparisDetayNoInput");
+			//this.oSiparisNo = this.getSelect("siparisNoInput");
+			//this.oSiparisDetayNo = this.getSelect("siparisDetayNoInput");
 			this.oSelectUrun = this.getSelect("urunFilterCombobox");
 			this.oSelectDurum = this.getSelect("durumFilterCombobox");
 			this.oModel = new sap.ui.model.json.JSONModel();
@@ -326,8 +330,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		onSelectChange: function() {
 			var aCurrentFilterValues = [];
 
-			aCurrentFilterValues.push(this.getView().byId("siparisNoInput").getValue());
-			aCurrentFilterValues.push(this.getView().byId("siparisDetayNoInput").getValue());
+			//aCurrentFilterValues.push(this.getView().byId("siparisNoInput").getValue());
+			//aCurrentFilterValues.push(this.getView().byId("siparisDetayNoInput").getValue());
 			aCurrentFilterValues.push(this.getSelectedItemText(this.oSelectUrun));
 			aCurrentFilterValues.push(this.getSelectedItemText(this.oSelectDurum));
 
