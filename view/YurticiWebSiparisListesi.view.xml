@@ -74,7 +74,7 @@
                                             <OverflowToolbarLayoutData moveToOverflow="true"/>
                                         </layoutData>
                                     </Button>
-                                    <Button text="Düzenle" iconFirst="true" type="Emphasized" enabled="true" press="_onFioriListReportActionButtonPress3">
+                                    <Button text="Düzenle" iconFirst="true" type="Emphasized" enabled="true" press="onDuzenle">
                                         <layoutData>
                                             <OverflowToolbarLayoutData moveToOverflow="true"/>
                                         </layoutData>

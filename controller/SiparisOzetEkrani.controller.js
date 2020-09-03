@@ -5,6 +5,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast"
 ], function(BaseController, MessageBox, Utilities, History, MessageToast, testNum) {
 	"use strict";
+	var enBuyukSiparisNo = -999;
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.SiparisOzetEkrani", {
 		handleRouteMatched: function(oEvent) {
@@ -196,8 +197,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				this.getView().byId("kaydet").setEnabled(true);
 			}
 			
-			var enBuyukSiparisNo = -999;
-
 			jQuery.ajax({
 				type: "GET",
 				url: "https://stajprojebackend.herokuapp.com/enBuyukSiparisNo",

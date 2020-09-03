@@ -215,7 +215,29 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
-		_onFioriListReportActionButtonPress3: function(oEvent) {
+		onDuzenle: function(oEvent) {
+
+			var tempUrl = "https://stajprojebackend.herokuapp.com/siparisDon/" + selectedIndex;
+			var responseJSON = {};
+			this.getOwnerComponent().getModel("sayfaIsmiModel").setProperty("/", sayfaIsmi);
+
+			jQuery.ajax({
+				type: "GET",
+				url: tempUrl,
+				contentType: "application/json",
+				async: false,
+				success: function(response) {
+					responseJSON = response;
+					console.log("Siparis basariyla siteye ulasti");
+				},
+				error: function(error) {
+					console.log("HATA: siparis siteye ulasamadi", error);
+				}
+			});
+
+			this.getView().getModel("tekKalemSiparisDuzenleModel").setProperty("/",responseJSON);
+
+			console.log(responseJSON);
 
 			var oBindingContext = oEvent.getSource().getBindingContext();
 

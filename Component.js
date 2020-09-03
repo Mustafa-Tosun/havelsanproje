@@ -42,6 +42,8 @@ sap.ui.define([
 
 			this.setModel(new sap.ui.model.json.JSONModel, "tekKalemSiparisModel");
 
+			this.setModel(new sap.ui.model.json.JSONModel, "tekKalemSiparisDuzenleModel");
+
 			this.setModel(new sap.ui.model.json.JSONModel, "cokKalemSiparisModel");
 
 			this.setModel(new sap.ui.model.json.JSONModel, "sayfaIsmiModel");
