@@ -5,6 +5,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/ui/core/routing/History"
 ], function(BaseController, MessageBox, Utilities, History) {
 	"use strict";
+	var selectedIndex = -1;
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.YurticiWebSiparisListesi", {
 		handleRouteMatched: function(oEvent) {
@@ -75,6 +76,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 		},
 		_onFioriListReportTableUpdateFinished: function(oEvent) {
+			
 			var oTable = oEvent.getSource();
 			var oHeaderbar = oTable.getAggregation("headerToolbar");
 			if (oHeaderbar && oHeaderbar.getAggregation("content")[1]) {
@@ -169,7 +171,34 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
-		_onFioriListReportActionButtonPress2: function(oEvent) {
+
+		onSelectionChange: function(oEvent){
+			var oSelectedItem = oEvent.getParameter("listItem");          //Get Hold of SelectedItem
+			var oTable = oEvent.getSource();                                             //Get Hold of Table
+			selectedIndex = oTable.indexOfItem(oSelectedItem)                                        //Get the index of Selected Item
+			//https://answers.sap.com/questions/12399310/fetching-the-index-of-a-row-on-basis-of-radio-butt.html
+		},
+
+		onGoruntule: function(oEvent) {
+
+			var tempUrl = "https://stajprojebackend.herokuapp.com/siparisDon/" + selectedIndex;
+			var responseJSON = {};
+
+			jQuery.ajax({
+				type: "GET",
+				url: tempUrl,
+				contentType: "application/json",
+				async: false,
+				success: function(response) {
+					responseJSON = response;
+					console.log("Siparis basariyla siteye ulasti");
+				},
+				error: function(error) {
+					console.log("HATA: siparis siteye ulasamadi", error);
+				}
+			});
+
+			this.getView().getModel("tekKalemSiparisModel").setProperty("/",responseJSON);
 
 			var oBindingContext = oEvent.getSource().getBindingContext();
 

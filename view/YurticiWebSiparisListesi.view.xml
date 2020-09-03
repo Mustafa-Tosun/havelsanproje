@@ -57,7 +57,7 @@
         <f:content>
             <VBox fitContainer="true">
                 <items>
-                    <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft" updateFinished="_onFioriListReportTableUpdateFinished" items ="{path: 'veri>/siparisler'}">
+                    <Table id="anaTablo" width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" selectionChange="onSelectionChange" mode="SingleSelectLeft" updateFinished="_onFioriListReportTableUpdateFinished" items ="{path: 'veri>/siparisler'}">
                         <headerToolbar>
                             <OverflowToolbar design="Transparent">
                                 <content>
@@ -74,7 +74,7 @@
                                             <OverflowToolbarLayoutData moveToOverflow="true"/>
                                         </layoutData>
                                     </Button>
-                                    <Button text="Görüntüle" iconFirst="true" type="Emphasized" enabled="true" press="_onFioriListReportActionButtonPress2">
+                                    <Button text="Görüntüle" iconFirst="true" type="Emphasized" enabled="true" press="onGoruntule">
                                         <layoutData>
                                             <OverflowToolbarLayoutData moveToOverflow="true"/>
                                         </layoutData>

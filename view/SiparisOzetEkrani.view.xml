@@ -20,27 +20,27 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="227px">
                         <layout1:control>
-                            <Label text="Ürün Açıklama" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Ürün Açıklama" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="166px">
                         <layout1:control>
-                            <Label text="Ürün" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Ürün" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="102px">
                         <layout1:control>
-                            <Label text="Ad Soyad" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="LTR" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Ad Soyad" design="Standard" width="auto" textAlign="Begin" textDirection="LTR" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="287px">
                         <layout1:control>
-                            <Label text="Teslim Şekli" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Teslim Şekli" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="670px">
                         <layout1:control>
-                            <Label text="Taşıma Şekli" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Taşıma Şekli" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="10px" top="371px">
@@ -50,67 +50,67 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="404px">
                         <layout1:control>
-                            <Label text="Miktar" design="Standard" width="51px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Miktar" design="Standard" width="51px" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="442px">
                         <layout1:control>
-                            <Label text="Sevkiyat Tarih Aralığı" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Sevkiyat Tarih Aralığı" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="473px">
                         <layout1:control>
-                            <Label text="Başlangıç" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Başlangıç" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="532px">
                         <layout1:control>
-                            <Label text="Bitiş" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Bitiş" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="606px">
                         <layout1:control>
-                            <Label text="Ödeme Türü" design="Standard" width="92px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Ödeme Türü" design="Standard" width="92px" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="347px">
                         <layout1:control>
-                            <Label text="Paketleme" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Paketleme" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="529px" top="166px">
                         <layout1:control>
-                            <Label text="Alıcı Firma" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Alıcı Firma" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="20px">
                         <layout1:control>
-                            <Label text="Firma" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Firma" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="519px" top="40px">
                         <layout1:control>
-                            <Label text="Ödeme Bilgisi" design="Standard" width="123.3125px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Ödeme Bilgisi" design="Standard" width="123.3125px" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="528px" top="102px">
                         <layout1:control>
-                            <Label text="Fatura Firması" design="Standard" width="106.3125px" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Fatura Firması" design="Standard" width="106.3125px" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="536px" top="287px">
                         <layout1:control>
-                            <Label text="Belgeler" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Belgeler" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="536px" top="347px">
                         <layout1:control>
-                            <Label text="Açıklamalar" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Açıklamalar" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="541px" top="227px">
                         <layout1:control>
-                            <Label text="Sektör" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
+                            <Label text="Sektör" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiMediumMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="529px" top="893.01171875px">
@@ -120,87 +120,87 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="122px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/adSoyad}" id="adSoyad" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/adSoyad}" id="adSoyad" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="552px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/sevkiyatBitis}" id="sevkiyatBitis" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/sevkiyatBitis}" id="sevkiyatBitis" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="40px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/aliciFirma}" id="firma" rows="2" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/aliciFirma}" id="firma" rows="2" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="247px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/urunAciklama}" id="urunAciklama" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/urunAciklama}" id="urunAciklama" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="186px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/urun}" id="urun" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/urun}" id="urun" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="485px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/sevkiyatBaslangic}" id="sevkiyatBaslangic" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/sevkiyatBaslangic}" id="sevkiyatBaslangic" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="424px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/miktar}" id="miktar" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/miktar}" id="miktar" rows="1" cols="50" wrapping="None" enabled="false" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="367px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/paketleme}" id="paketleme" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/paketleme}" id="paketleme" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="307px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/teslimSekli}" id="teslimSekli" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/teslimSekli}" id="teslimSekli" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="650px" top="49px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/odemeBilgisi}" id="odemeBilgisi" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/odemeBilgisi}" id="odemeBilgisi" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="690px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/tasimaSekli}" id="tasimaSekli" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/tasimaSekli}" id="tasimaSekli" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="618px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/odemeTuru}" id="odemeTuru" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/odemeTuru}" id="odemeTuru" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="650px" top="122px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/faturaFirmasi}" id="faturaFirmasi" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/faturaFirmasi}" id="faturaFirmasi" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="650px" top="186px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/aliciFirma}" id="aliciFirma" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/aliciFirma}" id="aliciFirma" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="650px" top="247px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/sektor}" id="sektor" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/sektor}" id="sektor" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="650px" top="307px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/dokumanTuru}" id="belgeler" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/dokumanTuru}" id="belgeler" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="650px" top="367px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/aciklamalar}" id="aciklamalar" rows="1" cols="50" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{tekKalemSiparisModel>/aciklamalar}" id="aciklamalar" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                 </layout1:positions>
