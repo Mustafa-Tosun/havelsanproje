@@ -15,7 +15,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="544px" top="529.01171875px">
                         <layout1:control>
-                            <Image src="/webapp/resources/etimadenResim.png" height="126.00000000px" width="426.60473562px" visible="true" densityAware="false"/>
+                            <Image src="/resources/etimadenResim.png" height="126.00000000px" width="426.60473562px" visible="true" densityAware="false"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="0px" top="227px">
@@ -125,7 +125,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="552px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/sevkiyatBitis}" id="sevkiyatBitis" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{path: 'tekKalemSiparisModel>/sevkiyatBitis', formatter: '.formatter.formatDate'}" id="sevkiyatBitis" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="40px">
@@ -145,7 +145,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="485px">
                         <layout1:control>
-                            <TextArea value="{tekKalemSiparisModel>/sevkiyatBaslangic}" id="sevkiyatBaslangic" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+                            <TextArea value="{path: 'tekKalemSiparisModel>/sevkiyatBaslangic', formatter: '.formatter.formatDate'}" id="sevkiyatBaslangic" rows="1" cols="50" wrapping="None" enabled="false" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="424px">
@@ -216,7 +216,7 @@
             </OverflowToolbar>
         </footer>
         <headerContent>
-            <f:Avatar src="/webapp/resources/eti-maden-isletmeleri.jpg" initials="" displayShape="Circle" displaySize="M" imageFitType="Cover"/>
+            <f:Avatar src="/resources/eti-maden-isletmeleri.jpg" initials="" displayShape="Circle" displaySize="M" imageFitType="Cover"/>
         </headerContent>
         <subHeader/>
         <customHeader/>

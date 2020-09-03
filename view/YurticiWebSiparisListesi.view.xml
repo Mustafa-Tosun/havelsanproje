@@ -1,5 +1,5 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.esasPrototip.controller.YurticiWebSiparisListesi" xmlns:f="sap.f" xmlns:variants="sap.ui.comp.variants" xmlns="sap.m" xmlns:filterbar="sap.ui.comp.filterbar" xmlns:core="sap.ui.core">
-    <f:DynamicPage headerExpanded="true" showFooter="false" class="sapUiSizeCompact">
+    <f:DynamicPage id="dynamicPageId" headerExpanded="true" showFooter="false" class="sapUiSizeCompact">
         <f:title>
             <f:DynamicPageTitle>
                 <f:heading>
@@ -16,28 +16,28 @@
                 <f:content>
                     <filterbar:FilterBar id="ListReportFilterBar" useToolbar="false" showGoOnFB="true" searchEnabled="true">
                         <filterbar:filterItems>
-                            <filterbar:FilterItem label="Sipariş No" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_StandardFilter-1---0">
+                            <filterbar:FilterItem label="Sipariş No" name="siparisNoFilter">
                                 <filterbar:control>
-                                    <MultiInput/>
+                                    <Input id="siparisNoInput" change="onSelectChange"/>
                                 </filterbar:control>
                             </filterbar:FilterItem>
-                            <filterbar:FilterItem label="Sipariş Detay No" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_StandardFilter-1598876916971---0">
+                            <filterbar:FilterItem label="Sipariş Detay No" name="siparisDetayNoFilter">
                                 <filterbar:control>
-                                    <MultiInput/>
+                                    <Input id="siparisDetayNoInput" change="onSelectChange"/>
                                 </filterbar:control>
                             </filterbar:FilterItem>
-                            <filterbar:FilterItem label="Ürün" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1598877003988---0">
+                            <filterbar:FilterItem label="Ürün" name="urunFilter">
                                 <filterbar:control>
-                                    <ComboBox items="{path:'staticJSONDATA>/combined/Sayfa1Set', templateShareable:true}">
+                                    <ComboBox id="urunFilterCombobox" change="onSelectChange" items="{path:'staticJSONDATA>/combined/Sayfa1Set', templateShareable:true}">
                                         <items>
                                             <core:Item key="{staticJSONDATA>ADI}" text="{staticJSONDATA>ADI}"/>
                                         </items>
                                     </ComboBox>
                                 </filterbar:control>
                             </filterbar:FilterItem>
-                            <filterbar:FilterItem label="Durum" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1598877030891---0">
+                            <filterbar:FilterItem label="Durum" name="durumFilter">
                                 <filterbar:control>
-                                    <ComboBox items="{path:'staticJSONDATA>/combined/DurumSet', templateShareable:true}">
+                                    <ComboBox id="durumFilterCombobox" change="onSelectChange" items="{path:'staticJSONDATA>/combined/DurumSet', templateShareable:true}">
                                         <items>
                                             <core:Item key="{staticJSONDATA>Durum}" text="{staticJSONDATA>Durum}"/>
                                         </items>
@@ -144,11 +144,11 @@
                                 <cells>
                                     <ObjectIdentifier title="{veri>siparisNo}"/>
                                     <ObjectIdentifier title="{veri>siparisDetayNo}"/>
-                                    <ObjectStatus text="{veri>siparisTarihi}" width="auto"/>
+                                    <ObjectStatus text="{path: 'veri>createdAt', formatter: '.formatter.formatDate'}" width="auto"/>
                                     <ObjectStatus text="{veri>urun}" width="auto"/>
                                     <ObjectStatus text="{veri>miktar}" width="auto"/>
-                                    <ObjectStatus text="{veri>sevkiyatBaslangic}" width="auto"/>
-                                    <ObjectStatus text="{veri>sevkiyatBitis}" width="auto"/>
+                                    <ObjectStatus text="{path: 'veri>sevkiyatBaslangic', formatter: '.formatter.formatDate'}" width="auto"/>
+                                    <ObjectStatus text="{path: 'veri>sevkiyatBitis', formatter: '.formatter.formatDate'}" width="auto"/>
                                     <ObjectStatus text="{veri>durum}" width="auto"/>
                                 </cells>
                             </ColumnListItem>

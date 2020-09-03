@@ -2,8 +2,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
 	"sap/ui/core/routing/History",
-	"sap/m/MessageToast"
-], function(BaseController, MessageBox, Utilities, History, MessageToast, siparisListesi) {
+	"sap/m/MessageToast",
+	"../model/formatter"
+], function(BaseController, MessageBox, Utilities, History, MessageToast, formatter, siparisListesi) {
 	"use strict";
 	var enBuyukSiparisNo = -999;
 
@@ -281,6 +282,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
+		formatter: formatter,
 		onInit: function() {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("KontratsizCokKalemliSiparis").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));

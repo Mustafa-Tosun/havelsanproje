@@ -355,10 +355,10 @@
                                             </layout:HorizontalLayout>
                                                 <ObjectStatus text="{cokKalemSiparisModel>paketleme}" titleActive="false" visible="true"/>
                                             <layout:HorizontalLayout>
-                                                <ObjectStatus text="{cokKalemSiparisModel>sevkiyatBaslangic}" titleActive="false" visible="true"/>
+                                                <ObjectStatus text="{path: 'cokKalemSiparisModel>sevkiyatBaslangic', formatter: '.formatter.formatDate'}" titleActive="false" visible="true"/>
                                             </layout:HorizontalLayout>
                                             <layout:HorizontalLayout>
-                                                <ObjectStatus text="{cokKalemSiparisModel>sevkiyatBitis}" titleActive="false" visible="true"/>
+                                                <ObjectStatus text="{path: 'cokKalemSiparisModel>sevkiyatBitis', formatter: '.formatter.formatDate'}" titleActive="false" visible="true"/>
                                             </layout:HorizontalLayout>
                                         </cells>
                                     </ColumnListItem>
@@ -373,12 +373,12 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="983px" top="52.01171875px">
                         <layout1:control>
-                            <DatePicker id="sevkiyatBitis" width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>
+                            <DatePicker id="sevkiyatBitis" width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="dd/MM/yyyy" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="725px" top="53.01171875px">
                         <layout1:control>
-                            <DatePicker id="sevkiyatBaslangic" width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>
+                            <DatePicker id="sevkiyatBaslangic" width="183px" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="dd/MM/yyyy" class="sapUiTinyMargin"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                 </layout1:positions>

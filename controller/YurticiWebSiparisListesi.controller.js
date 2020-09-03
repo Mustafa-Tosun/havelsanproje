@@ -2,8 +2,12 @@ var veriler_url = "https://stajprojebackend.herokuapp.com/siparisler";
 sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
-	"sap/ui/core/routing/History"
-], function(BaseController, MessageBox, Utilities, History) {
+	"sap/ui/core/routing/History",
+	"../model/formatter",
+	'sap/ui/model/json/JSONModel',
+	'sap/m/Label',
+	'sap/ui/model/Filter'
+], function(BaseController, MessageBox, Utilities, History, formatter, JSONModel, Label, Filter) {
 	"use strict";
 	var selectedIndex = -1;
 	var sayfaIsmi = "YurticiWebSiparisListesi"
@@ -285,7 +289,27 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
+		formatter: formatter,
 		onInit: function() {
+
+			this.aKeys = [
+				"siparisNo", "siparisDetayNo", "urun", "durum"
+			];
+
+			this.oSiparisNo = this.getSelect("siparisNoInput");
+			this.oSiparisDetayNo = this.getSelect("siparisDetayNoInput");
+			this.oSelectUrun = this.getSelect("urunFilterCombobox");
+			this.oSelectDurum = this.getSelect("durumFilterCombobox");
+			this.oModel = new sap.ui.model.json.JSONModel();
+			this.oModel.loadData(sap.ui.require.toUrl("https://stajprojebackend.herokuapp.com/siparisler"), null, false);
+			this.getView().setModel(this.oModel);
+			this.oModel.setProperty("/", "Filtered by None");
+
+			var oFB = this.getView().byId("ListReportFilterBar");
+			if (oFB) {
+				oFB.variantsInitialized();
+			}
+
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("YurticiWebSiparisListesi").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 			this.oFilterBar = null;
@@ -298,15 +322,90 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var siparisVerileri = new sap.ui.model.json.JSONModel(veriler_url);
 			this.getView().setModel(siparisVerileri, "veri");
 
+		},		
+		onSelectChange: function() {
+			var aCurrentFilterValues = [];
+
+			aCurrentFilterValues.push(this.getView().byId("siparisNoInput").getValue());
+			aCurrentFilterValues.push(this.getView().byId("siparisDetayNoInput").getValue());
+			aCurrentFilterValues.push(this.getSelectedItemText(this.oSelectUrun));
+			aCurrentFilterValues.push(this.getSelectedItemText(this.oSelectDurum));
+
+			this.filterTable(aCurrentFilterValues);
+		},	
+		filterTable: function(aCurrentFilterValues) {
+			this.getTableItems().filter(this.getFilters(aCurrentFilterValues));
+			this.updateFilterCriterias(this.getFilterCriteria(aCurrentFilterValues));
+		},
+
+		updateFilterCriterias: function(aFilterCriterias) {
+			this.removeSnappedLabel(); /* because in case of label with an empty text, */
+			this.addSnappedLabel(); /* a space for the snapped content will be allocated and can lead to title misalignment */
+			this.oModel.setProperty("veri>/", this.getFormattedSummaryText(aFilterCriterias));
+		},
+		getFormattedSummaryText: function(aFilterCriterias) {
+			if (aFilterCriterias.length > 0) {
+				return "Filtered By (" + aFilterCriterias.length + "): " + aFilterCriterias.join(", ");
+			} else {
+				return "Filtered by None";
+			}
+		},
+		addSnappedLabel: function() {
+			var oSnappedLabel = this.getSnappedLabel();
+			oSnappedLabel.attachBrowserEvent("click", this.onToggleHeader, this);
+			this.getPageTitle().addSnappedContent(oSnappedLabel);
+		},
+		removeSnappedLabel: function() {
+			this.getPageTitle().destroySnappedContent();
+		},
+
+		getFilters: function(aCurrentFilterValues) {
+			this.aFilters = [];
+
+			this.aFilters = this.aKeys.map(function(sCriteria, i) {
+				return new Filter(sCriteria, sap.ui.model.FilterOperator.Contains, aCurrentFilterValues[i]);
+			});
+
+			return this.aFilters;
+		},
+		getFilterCriteria: function(aCurrentFilterValues) {
+			return this.aKeys.filter(function(el, i) {
+				if (aCurrentFilterValues[i] !== "") {
+					return el;
+				}
+			});
+		},
+		getTable: function() {
+			return this.getView().byId("anaTablo");
+		},
+		getTableItems: function() {
+			return this.getTable().getBinding("items");
+		},
+		getSelect: function(sId) {
+			return this.getView().byId(sId);
+		},
+		getSelectedItemText: function(oSelect) {
+			return oSelect.getSelectedItem() ? oSelect.getSelectedItem().getKey() : "";
+		},
+		getPage: function() {
+			return this.getView().byId("dynamicPageId");
+		},
+		getPageTitle: function() {
+			return this.getPage().getTitle();
+		},
+		getSnappedLabel: function() {
+			return new Label({
+				text: "{veri>/}"
+			});
 		},
 		onExit: function() {
 
 			// to destroy templates for bound aggregations when templateShareable is true on exit to prevent duplicateId issue
 			var aControls = [{
-				"controlId": "Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1598877003988---1",
+				"controlId": "urunFilter",
 				"groups": ["items"]
 			}, {
-				"controlId": "Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1598877030891---1",
+				"controlId": "durumFilter",
 				"groups": ["items"]
 			}];
 			for (var i = 0; i < aControls.length; i++) {

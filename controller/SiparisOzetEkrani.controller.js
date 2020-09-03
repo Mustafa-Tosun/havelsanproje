@@ -2,8 +2,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
 	"sap/ui/core/routing/History",
-	"sap/m/MessageToast"
-], function(BaseController, MessageBox, Utilities, History, MessageToast, testNum) {
+	"sap/m/MessageToast",
+	"../model/formatter"
+], function(BaseController, MessageBox, Utilities, History, MessageToast, formatter) {
 	"use strict";
 	var enBuyukSiparisNo = -999;
 
@@ -105,9 +106,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
         		contentType: "application/json",
         		data:JSON.stringify(tekKalemSiparisJSON),
 				success: function() {
+					setTimeout(() => {
+						location.reload();
+					}, 1000);
 					MessageToast.show("Siparis Başarıyla Kaydedildi.", {
                         duration: 5000,
-                    });
+					});
 				},
 				error: function(error) {
 					console.log("HATA: ", error);
@@ -183,6 +187,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 		},
+		formatter: formatter,
 		onInit: function() {
 
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
