@@ -3,7 +3,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"./utilities",
 	"sap/ui/core/routing/History",
 	"sap/m/MessageToast"
-], function(BaseController, MessageBox, Utilities, History, MessageToast) {
+], function(BaseController, MessageBox, Utilities, History, MessageToast, testNum) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.SiparisOzetEkrani", {
@@ -183,9 +183,19 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 		},
 		onInit: function() {
+
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("SiparisOzetEkrani").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 
+			var gelinenSayfa = this.getOwnerComponent().getModel("sayfaIsmiModel").getProperty("/");
+
+			if (gelinenSayfa == "YurticiWebSiparisListesi"){
+				this.getView().byId("kaydet").setEnabled(false);
+			}
+			else{
+				this.getView().byId("kaydet").setEnabled(true);
+			}
+			
 			var enBuyukSiparisNo = -999;
 
 			jQuery.ajax({

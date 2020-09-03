@@ -6,6 +6,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 ], function(BaseController, MessageBox, Utilities, History) {
 	"use strict";
 	var selectedIndex = -1;
+	var sayfaIsmi = "YurticiWebSiparisListesi"
+	
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.YurticiWebSiparisListesi", {
 		handleRouteMatched: function(oEvent) {
@@ -183,6 +185,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			var tempUrl = "https://stajprojebackend.herokuapp.com/siparisDon/" + selectedIndex;
 			var responseJSON = {};
+			this.getOwnerComponent().getModel("sayfaIsmiModel").setProperty("/", sayfaIsmi);
 
 			jQuery.ajax({
 				type: "GET",
@@ -203,7 +206,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
 			return new Promise(function(fnResolve) {
-
+				var testNum = 0;
 				this.doNavigate("SiparisOzetEkrani", oBindingContext, fnResolve, "");
 			}.bind(this)).catch(function(err) {
 				if (err !== undefined) {

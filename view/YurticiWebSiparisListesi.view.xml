@@ -21,14 +21,9 @@
                                     <MultiInput/>
                                 </filterbar:control>
                             </filterbar:FilterItem>
-                            <filterbar:FilterItem label="Ref No" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_StandardFilter-1598876916971---0">
+                            <filterbar:FilterItem label="Sipariş Detay No" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_StandardFilter-1598876916971---0">
                                 <filterbar:control>
                                     <MultiInput/>
-                                </filterbar:control>
-                            </filterbar:FilterItem>
-                            <filterbar:FilterItem label="Sipariş Tarihi" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-sap_ui_comp_filterbar_FilterItem-1598876958110---0">
-                                <filterbar:control>
-                                    <DateRangeSelection width="auto" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" change="_onDateRangeSelectionChange"/>
                                 </filterbar:control>
                             </filterbar:FilterItem>
                             <filterbar:FilterItem label="Ürün" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1598877003988---0">

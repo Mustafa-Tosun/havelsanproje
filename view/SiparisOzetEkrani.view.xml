@@ -115,7 +115,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="529px" top="893.01171875px">
                         <layout1:control>
-                            <Button text="Kaydet" type="Default" icon="sap-icon://save" iconFirst="true" width="129.1015625px" enabled="true" visible="true" iconDensityAware="false" press="onKaydet"/>
+                            <Button id="kaydet" text="Kaydet" type="Default" icon="sap-icon://save" iconFirst="true" width="129.1015625px" enabled="true" visible="true" iconDensityAware="false" press="onKaydet"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="121px" top="122px">

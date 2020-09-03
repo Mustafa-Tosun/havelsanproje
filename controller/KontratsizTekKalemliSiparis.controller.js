@@ -4,6 +4,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/ui/core/routing/History"
 ], function(BaseController, MessageBox, Utilities, History) {
 	"use strict";
+	var sayfaIsmi = "KontratsizTekKalemliSiparis";
 
 	return BaseController.extend("com.sap.build.standard.esasPrototip.controller.KontratsizTekKalemliSiparis", {
 		handleRouteMatched: function(oEvent) {
@@ -240,6 +241,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				"aliciFirma": t_aliciFirma,
 				"aciklamalar": t_aciklamalar
 			});
+
+			this.getOwnerComponent().getModel("sayfaIsmiModel").setProperty("/", sayfaIsmi); //su anki sayfanin ismini modele atiyoruz ki sonraki sayfa nereden gelindigini bilebilsin
 			
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
