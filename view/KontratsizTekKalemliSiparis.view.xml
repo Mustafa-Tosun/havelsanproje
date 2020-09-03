@@ -275,7 +275,7 @@
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="162px" top="654px">
                         <layout1:control>
-                            <DatePicker id="sevkiyatBaslangic" width="160.0500030517578px" value="" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/y" change="handleChange"/>
+                            <DatePicker id="sevkiyatBaslangic" width="160px" value="" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/y" change="handleChange"/>
                         </layout1:control>
                     </layout1:PositionContainer>
                     <layout1:PositionContainer left="401px" top="654px">

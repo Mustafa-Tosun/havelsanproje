@@ -215,6 +215,40 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
+		onSil: function(oEvent) {
+
+			var tempUrl = "https://stajprojebackend.herokuapp.com/onSil/" + selectedIndex;
+
+			jQuery.ajax({
+				type: "GET",
+				url: tempUrl,
+				contentType: "application/json",
+				async: false,
+				success: function(response) {
+					MessageToast.show("Siparis basariyla silindi.", {
+                        duration: 5000,
+                    });
+				},
+				error: function(error) {
+					MessageToast.show("HATA: siparis silinemedi!", {
+                        duration: 5000,
+                    });
+					console.log("HATA: siparis silinemedi!", error);
+				}
+			});
+
+			var oBindingContext = oEvent.getSource().getBindingContext();
+
+			return new Promise(function(fnResolve) {
+
+				this.doNavigate("TekKalemliSiparisDuzenlemeEkrani", oBindingContext, fnResolve, "");
+			}.bind(this)).catch(function(err) {
+				if (err !== undefined) {
+					MessageBox.error(err.message);
+				}
+			});
+
+		},
 		onDuzenle: function(oEvent) {
 
 			var tempUrl = "https://stajprojebackend.herokuapp.com/siparisDon/" + selectedIndex;

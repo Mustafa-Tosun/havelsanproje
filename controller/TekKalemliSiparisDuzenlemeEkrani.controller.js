@@ -172,6 +172,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		onDegisikleriKaydet: function(oEvent) {
 
 			oEvent = jQuery.extend(true, {}, oEvent);
+
 			return new Promise(function(fnResolve) {
 					fnResolve(true);
 				})
@@ -239,14 +240,19 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					} else {
 
 						return new Promise(function(fnResolve) {
-
+							
 							sap.m.MessageBox.confirm("Yaptığınız değişikleri kaydetmek istediğinize emin misiniz?", {
 								title: "Uyarı!!!",
 								actions: ["Evet", "Hayır"],
 								onClose: function(sActionClicked) {
 									fnResolve(sActionClicked === "Evet");
+									//if(sActionClicked === "Evet"){
+										
+									//}
 								},
+								
 							});
+							
 							
 						});
 

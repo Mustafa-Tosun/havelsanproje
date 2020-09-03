@@ -79,7 +79,7 @@
                                             <OverflowToolbarLayoutData moveToOverflow="true"/>
                                         </layoutData>
                                     </Button>
-                                    <Button text="Sil" iconFirst="false" type="Reject" enabled="true">
+                                    <Button text="Sil" iconFirst="false" type="Reject" enabled="true" press="onSil">
                                         <layoutData>
                                             <OverflowToolbarLayoutData moveToOverflow="true"/>
                                         </layoutData>
@@ -144,7 +144,7 @@
                                 <cells>
                                     <ObjectIdentifier title="{veri>siparisNo}"/>
                                     <ObjectIdentifier title="{veri>siparisDetayNo}"/>
-                                    <ObjectStatus text="{veri>sevkiyatBaslangic}" width="auto"/>
+                                    <ObjectStatus text="{veri>siparisTarihi}" width="auto"/>
                                     <ObjectStatus text="{veri>urun}" width="auto"/>
                                     <ObjectStatus text="{veri>miktar}" width="auto"/>
                                     <ObjectStatus text="{veri>sevkiyatBaslangic}" width="auto"/>
